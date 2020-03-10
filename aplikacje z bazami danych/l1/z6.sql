@@ -1,0 +1,15 @@
+USE AdventureWorks2017;
+
+CREATE TABLE OrdersToProcess(SalesOrderID INT, Delayed BIT)
+
+GO
+
+
+MERGE OrdersToProcess as TARGET
+USING [Sales].[SalesOrderHeader] as SOURCE ON TARGET.SalesOrderID=SOURCE.SalesOrderID
+WHEN MATCHED THEN
+	UPDATE SET TARGET.Delayed=
+		CASE WHEN SOURCE.DueDate > GETDATE() THEN 1
+			ELSE 0
+		END
+WHEN NOT MATCHED AND SOURCE.DueDate > GETDATE() THEN INSERT VALUES(SOURCE.SalesOrderID, 0);
