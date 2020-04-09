@@ -1,0 +1,15 @@
+# depslib dependency file v1.0
+1513090564 source:/home/konrad/Pulpit/tydzien 8/zadanie1/main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"wllc.h"
+
+1513090163 /home/konrad/Pulpit/tydzien 8/zadanie1/wllc.h
+	<stdbool.h>
+
+1513090555 source:/home/konrad/Pulpit/tydzien 8/zadanie1/wllc.c
+	<stdio.h>
+	<stdlib.h>
+	"wllc.h"
+

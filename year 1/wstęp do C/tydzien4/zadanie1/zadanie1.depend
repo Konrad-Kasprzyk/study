@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1509448467 source:/home/konrad/Pulpit/tydzien4/zadanie1/main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

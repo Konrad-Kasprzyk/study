@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1512467304 source:/home/konrad/Pulpit/tydzien 7/zadanie2/main.c
+	<stdio.h>
+	<stdio.h>
+	<stdlib.h>
+	"kolejka.h"
+	<string.h>
+
+1512468720 /home/konrad/Pulpit/tydzien 7/zadanie2/kolejka.h
+	<stdbool.h>
+
+1512468749 source:/home/konrad/Pulpit/tydzien 7/zadanie2/kolejka.c
+	<math.h>
+	<stdio.h>
+	<stdlib.h>
+	"kolejka.h"
+	<stdbool.h>
+	<string.h>
+

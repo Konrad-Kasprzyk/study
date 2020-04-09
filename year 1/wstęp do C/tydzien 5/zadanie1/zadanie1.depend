@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1511117759 source:/home/konrad/Pulpit/tydzien 5/zadanie1/main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+

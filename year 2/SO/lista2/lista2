@@ -1,0 +1,256 @@
+
+Zadanie 1
+
+    * rodzic-dziecko: każdy proces posiada swojego rodzica (z wyjątkiem
+    init, którego rodzic to kernel), który utworzył dziecko
+    przy pomocy fork().
+    * grupa procesów - zbiór jednego lub więcej procesów, które mogą
+    otrzymywać razem sygnały.
+    * identyfikator (PID) - unikalna liczba, którą ma przypisany każdy
+    proces
+    * właściciel - użytkownik, który uruchomił proces. Ma pełne uprawnienia
+    do kontrolowania swoich procesów (może je np. zatrzymywać lub zabijać).
+    * wątki jądra - wątki wykonujące kod jądra, niepowiązane z procesami
+    z przestrzeni użytkownika. Nie używają pamięci użytkownika (więc
+    VSZ jest równe zero według polecenia ps). Używane są do implementowania
+    zadań działających w tle.
+    * hierarchia procesów - drzewo procesów przedstawiające relację 
+    rodzic-dziecko działających procesów.
+
+    ps -eo user,pid,pgid,tid,pri,stat,wchan,cmd
+
+STAT:
+    user - właściciel procesu
+    pid  - identyfikator procesu
+    ppid - identyfikator rodzica
+    pgid - identyfikator grupy procesów, do której należy proces
+    tid  - identyfikator wątku (wątki są procesami, które dzielą
+        niektóre rzeczy (np. pamięć) z innymi instancjami
+        z tej samej grupy procesów).
+    pri  - priorytet procesu (wyższa liczba oznacza mniejszy priorytet)
+    stat - stan w jakim znajduje się proces:
+        D - uninterruptible sleep
+        S - interruptible sleep
+        R - runnable
+        X - dead
+        T - stopped
+        Z - zombie
+        I - idle kernel thread
+        < - high priority
+        + - w grupie procesów pierwszoplanowych
+        l - wielowątkowy
+        s - session loader (pierwszy proces w sesji)
+    wchan - adres funkcji kernela w której proces śpi (???)
+    vsz   - rozmiar pamięci wirtualnej procesu
+    cmd   - nazwa polecenia, które utworzyło proces
+
+    rodzicem init jest kernel (ppid == 0)
+
+    wątki jądra można rozpoznać po USER: root, PGID: 0 , 
+    CMD w kwadratowych nawiasach [] (nie jest znana nazwa polecenia,
+    które je utworzyło).
+
+    wątki w pstree można rozpoznać po tym, że ich nazwy znajdują się
+    w nawiasach klamrowych (n*[{name}] == grupa n wątków)
+
+-------------------------------------------------------------------------------
+
+Zadanie 2
+
+    	proc(5) - System plików proc (krótko procfs) jest wirtualnym systemem plików
+	i interfejsem do pewnych struktur danych działającego systemu (jądra). 
+	Zwyczajowo znajduje się w /proc. 
+
+        procfs - wirtualny system plików pozwalający na komunikację z
+        jądrem uniksowego systemu. Jego struktura występuje jedynie
+        w pamięci operacyjnej komputera.
+        System plików procfs montowany jest w katalogu /proc. Większość
+        plików ma rozmiar 0 bajtów
+
+    /proc/pid  - zawiera informacje związane z procesami o danym pid
+    
+    argumenty programu - parametry przekazane do programu w momencie
+    jego wywołania.
+        argc - liczba argumentów (włącznie z nazwą polecenia)
+        argv[] - argumenty (argv[0] to nazwa polecenia)
+    
+    zmienne środowiskowe - zmienne, których wartości są ustawianie
+        poza programem. Nazwane wartości, przechowywane i zarządzane
+        przez powłokę. Każdy proces poswiada swój zestaw zmiennych
+        środowiskowych, które dziedziczy po rodzicu.
+
+    zmienne środowiskowe: /proc/[pid]/environ
+    argumenty programu:   /proc/[pid]/cmdline
+
+    pola w pliku status (nie stat):
+
+    State - aktualny stan procesu
+    Groups - supplementary grupy procesu; dziedziczone po rodzicu
+        (np. shellu); mówią o tym jakie uprawnienia ma proces
+    VmPeak - największy rozmiar pamięci wirtualnej (do pamięci
+        wirtualnej wliczają się też strony, które nie są wtoczone)
+    VmSize - aktualny rozmiar pamięci wirtualnej
+    VmRSS - resident set size; fizyczny rozmiar pamięci używanej
+        przez proces; (zbiór roboczy procesu)
+    Threads - liczba wątków w procesie zawierającym ten wątek
+    voluntary_ctxt_switches - liczba dobrowolnych zmian kontekstu
+        (jest wtedy kiedy proces opuszcza CPU bo nie ma nic
+        do robienia (np. oczekuje na IO)).
+    nonvoluntary_ctxt_switches - liczba zmian kontestu wywołanych
+        przez wywłaszczenie procesu.
+
+---------------------------------------------------------------------
+zadanie 3
+
+ segmenty programu - spójne bloki pamięci o jednolitym przeznaczeniu
+        i atrybutach z punktu widzenia procesu ładowania i
+        uruchamiania programu. Jeden segment może zawierać wiele
+        sekcji (linker - sekcje, loader - segmenty).
+
+ pamięć anonimowa - pamięć, która nie jest powiązana z żadnym plikiem
+        ani obiektem. Powszechnym anonimowym mapowaniem pamięci
+        są stos bądź sterta ([ heap ], [ stack ]).
+
+pliki odwzorowane w pamięć (memory-mapped file) - segment pamięci
+        wirtualnej, który ma przypisane bezpośrednie mapowanie co 
+        do bajta z jakimś plikiem bądź podobnym zasobem. Umożliwia 
+        to ominięcie kopiowania buforów przy read() lub write() gdyż 
+        proces moze adresować plik bezpośrednio. Plik może być wtedy
+        traktowany jak ciągły obszar w pamięci procesu dostępny poprzez
+        bezpośrednie operacja pobrania i podstawienia wartości. Wszystkie
+        zmiany dokonane w pamieci zapisywane są potem na dysku.
+
+
+znaczenie wydruku nagłowków kolumn:
+
+	Address - adres początku
+        Size/Kbytes - rozmiar 
+        RSS - fizyczny rozmiar używanej pamięci    
+        Dirty - dirty strony w kilobajtach
+        Mode - pozwolenia na czytanie/pisanie/wykonywanie
+	Mapping - plik na jaki zmapowana jest pamięć lub [anon]/[stack]
+
+segmenty programu  jest zwykłą nazwa, a pliki odwzorowane w pamięć mają na końcu .so
+
+
+znajdź konkretne zawartości przestrzeni adresowej
+
+sudo pmap -x 1555 | egrep 'stack|anon'  
+
+-----------------------------------------------------------------------
+4.
+
+znaczenie kolumn wykazu:
+
+    COMMAND - polecenie, które uruchomiło proces
+    PID - identyfikator procesu
+    USER - właściciel procesu
+    FD - numer deskryptora pliku lub ktoreś z poniższych
+        cwd - current working directory
+        L[nn] - library reference
+        err - FD information error 
+        jld - jail directory
+        ltx - shared library text
+        M[xx] - hex memory-mapped type number
+        m86 - DOS Merge mapped file
+        mem - memory-mapped file
+        mmap - memory-mapped-defive
+        pd - parent directory
+        rtd - root directory
+        tr - kernel trace file 
+        txt - program text (code and data)
+        v86 - VP/ix mapped file
+        Po FD pojawia się trym w jakim plik został otworzony
+        w - write
+        r - read
+        u - write and read
+        spacja jeżeli tryb jest nieznany (brak znaku
+            oznaczającego rodzaj blokady)
+        '-' jeżeli tryb jest nieznany
+    TYPE - typ węzła powiązanego z plikiem
+        DIR - katalogi
+        DEL - usunięty plik zmapowany
+        REG - plik zwykły
+        IPv4 - socket IPv4
+        ax25 - socket Linux AX.25
+        inet - Internet domain socket
+        sock - socket of unknown domain
+        unix - UNIX domain socket - służy do wymiany
+        danych pomiędzy procesami
+        x.25 - HP-UX x.25 socket
+        STSO - stream socket
+        wysyłanie i odbieranie danych.
+        FIFO - specjalny plik (nazwany potok), który jest częścią
+        systemu plików
+
+ plik zwykły - zwykły plik, W lsof oznaczony przez REG.
+
+zasób plikopodobny (deskryptor pliku) - Czyli deskryptor pliku. 
+	Czytamy/piszemy do zasobu jakby to by l plik ale może
+	to być też inny zasób jak np. stdin/stdout.
+
+Potok (pipe) - laczy stdout jednego procesu z stdin drugiego procesu. Potok może
+	laczyć ze soba wiele procesów (tzw. pipeline).
+
+katalog (directory) - struktura organizacji danych (specjalny
+        rodzaj pliku), która zawiera referencje do plików lub innych 
+        katalogów. W lsof oznaczony przez DIR.
+
+plik urządzenia (device file) - specjalny plik służący do komunikacji
+        programu z urządzeniem poprzez używanie jego sterowników
+
+ gniazdo (socket) - dwukierunkowy punkt końcowy połączenia. Umożliwia
+        przesyłanie danych w obie strony.Wykorzystywane jest przez aplikacje
+	do komunikowania się przez sieć w ramach komunikacji międzyprocesowej. 
+
+        Gniazdo posiada trzy główne właściwości:
+        - typ gniazda identyfikujący protokół wymiany danych
+        - lokalny adres
+        - opcjonalny lokalny numer portu identyfikujący proces
+
+
+rozpoznaj po wpisaniu lsof -p 3119:
+
+potok - pipe w NAME
+
+REG - zwykły plik
+
+katalog - DIR
+
+gniazdo - sock w TYPE
+
+
+
+ps -ax | grep "firefox"
+        lsof -p [pid] > before
+        lsof -p [pid] > after
+        diff -u before after | grep IPv4
+
+---------------------------------------------------------------------
+zadanie5.
+time find /usr > plik
+
+
+a) user - czas CPU spędzony w trybie użytkownika podczas
+    wykonywania tego konkretnego procesu.
+       sys - czas spędzony przez CPU na wykonywaniu syscalli
+    przez jądro. Liczy się tylko czas dla tego konkretnego
+    procesu.
+       real - czas realny od uruchomienia procesu do jego zakończenia.
+
+    b) Tak. User time jest sumowany po wszystkich rdzeniach. Używanie 
+    dwóch rdzeni po 1s każdy daje łączny czas usera 2s podczas gdy
+    realny to 1s.
+
+Gdyby procesor zajmowa l sie tylko i wy lacznie tym jednym pro-
+gramem to czas real = user + sys, ale tak nie jest. Procesor musia l obs lużyć
+wiele innych dzia lajacych procesów, dlatego jego praca by la wykolejkowana i
+czas real uwzglednia również czas oczekiwania w kolejce procesów.
+
+
+time lsof
+
+ulimit -a 
+ulimit -t 1
+-t   The maximum amount of cpu time in seconds. 
+

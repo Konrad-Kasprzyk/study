@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1511818206 source:/home/konrad/Pulpit/tydzien 6/zadanie2/main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	"testy.h"
+
+1511817963 source:/home/konrad/Pulpit/tydzien 6/zadanie2/testy.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<stdbool.h>
+	"testy.h"
+
+1511818247 /home/konrad/Pulpit/tydzien 6/zadanie2/testy.h
+

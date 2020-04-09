@@ -1,0 +1,39 @@
+xrandr --output [output] --rate [rate] --mode [mode]
+np. xrandr --output HDMI --mode 1024x768
+
+samo xrandr daje opis podłączonych urządzeń
+
+
+1.
+ps -eo user,pid,ppid,pgid,tid,pri,stat,wchan,cmd
+
+2.
+środowisko:
+cat /proc/1555/environ
+
+argumenty:
+cat /proc/1555/cmdline
+
+3. 
+ps -eo user,pid,pgid,tid,pri,stat,wchan,cmd | grep "Xorg"
+
+sudo pmap -x [pid]
+
+sudo pmap -x 1555 | egrep 'stack|anon'      // -x daje więcej info
+
+4.
+ps -eo user,pid,pgid,tid,pri,stat,wchan,cmd | grep firefox
+
+lsof -p [pid]
+
+ps -ax | grep "firefox"
+        lsof -p [pid] > before
+        lsof -p [pid] > after
+        diff -u before after | grep IPv4
+5.
+
+time lsof
+
+ulimit -a 
+ulimit -t 1
+-t   The maximum amount of cpu time in seconds. 

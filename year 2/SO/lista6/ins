@@ -1,0 +1,6 @@
+./listdir /dev     pokaże symboliczne linki
+
+ls -l uid_gid     pokaże uprawnienia
+
+chmod g+s   set_uid bit
+chmod u+s   set_gid bit
