@@ -1,0 +1,35 @@
+ip link set up dev enp0
+ip addr add 192.168.0.1/24 dev enp0
+ip link set enpxsy name enp-loc0
+
+ip addr flush dev enp0
+ip link set down dev enp0
+
+# Warsztaty1
+ethtool enp0 - sprawdź status warstwy fizycznej karty enp0
+// sprawdzenie szybkości przesyłu danych
+iperf3 -s
+iperf3 -c adres IP interfejsu enp3s0 sąsiada
+
+# Warsztaty2
+sysctl net.ipv4.ip forward=1
+ip route add 192.168.12.0/24 via 172.16.0.2
+ip route add default via 192.168.11.1
+dhclient -v enp0 - karta sieciowa może połączyć się z internetem, dostaje IP
+
+#Warsztaty3
+V2#> touch /etc/quagga/ripd.conf
+V2#> touch /etc/quagga/zebra.conf
+V2#> touch /etc/quagga/vtysh.conf
+V2#> systemctl start ripd
+vtysh
+virbian# configure terminal
+virbian(config)# router rip
+virbian(config-router)# version 2
+virbian(config-router)# network 192.168.1.0/24
+virbian(config-router)# network 192.168.2.0/24
+exit
+virbian(config)# end
+virbian# show interface
+virbian# show ip route
+virbian# show ip rip

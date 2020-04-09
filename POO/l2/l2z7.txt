@@ -1,0 +1,42 @@
+class UsosWebPage:
+
+    def show():
+        self.pageLayout = GradeController.getStudentGradeInfo()
+
+
+
+
+class GradeController:
+
+    Student s
+    
+    def getStudentGradeInfo():
+        int marks[]
+        courses = s.getCourses()
+        int i = 0
+        for each c in courses:
+            makrs[i++] = c.getMark(s)
+
+        return marks
+
+
+
+
+class Student:
+    def getCourses():
+        return self.courses
+
+
+
+
+class Course:
+
+    int course_marks[]
+    Student curr_s
+
+    def getMark(Student s):
+        self.curr_s = s
+        return self.getValue()
+
+    def getValue():
+        return course_marks[curr_s.index]
