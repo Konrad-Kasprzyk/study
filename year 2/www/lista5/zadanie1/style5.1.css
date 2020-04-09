@@ -1,0 +1,27 @@
+#slajder{
+    width: 400px;
+    height: 50px;
+    border: 1px solid;
+    position: relative;
+}
+
+#suwak{
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    color: blueviolet;
+    border: 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+}
+
+#slodziaki{
+    width: 400px;
+    height: 400px; 
+}
+
+#kontener{
+    margin-top: 15%;
+    margin-left: 40%;
+}

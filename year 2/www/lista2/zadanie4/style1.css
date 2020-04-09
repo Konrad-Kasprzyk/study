@@ -1,0 +1,18 @@
+#sentencja::before{
+	content:"Inspiracja na co dzień: ";
+	font-size: 40px;
+	font-style: italic;
+}
+#sentencja::after{
+	content:"koniec ładnej sentencji, ten tekst sam doda się po #sentencja";
+}
+/* każdy div będzie teraz miał takie kreski, chyba że klasa je zasłoni
+	jak w # sentencja */
+div::before{
+	background-color: aquamarine;
+	content:"-------------------------------------";
+}
+div::after{
+	content: "------------------------------------";
+}
+

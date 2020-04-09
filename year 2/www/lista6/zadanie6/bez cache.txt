@@ -1,0 +1,6 @@
+Pragma: no-cache
+Cache-Control: no-cache
+Cache-Control: max-age=0
+Cache-Control: no-cache, no-store, must-revalidate
+
+_gat=1  to dopisujesz do cookies by google wykrylo, ze nie pobiera sie cache 

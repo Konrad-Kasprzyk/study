@@ -1,0 +1,8 @@
+Dopisz w fiddlerze w Composer pod Get https://www.google.com/
+
+Accept-Language: pl
+Accept-Language: en
+Accept-Language: de-CH
+Accept-Language: en-US
+Accept-Language: de-DE
+Accept-Language: fr-FR

@@ -1,0 +1,5 @@
+daj to przy odpowiedzi z serwera w fiddlerze
+
+Set-Cookie: ciastko1=ciasteczko
+
+Set-Cookie: sessionid=38afes7a8; HttpOnly; Path=/

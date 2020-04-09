@@ -1,0 +1,23 @@
+
+ul.a{
+	list-style-image: url('dot2.jpg');
+}
+
+
+ul.b > li:before
+{
+	content: url('dot2.jpg');
+}
+
+ul.b > li{
+	list-style-type: none;
+}
+
+ul.c > li{
+	padding-left: 60px;
+	list-style-type: none;
+	background-image: url('dot2.jpg');
+	background-repeat: no-repeat;
+	background-position: left;
+	height: 60px;
+}

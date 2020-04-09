@@ -1,0 +1,51 @@
+/* Elements are positioned using the top, bottom, left, and right properties.
+ However, these properties will not work unless the position property is set first.
+ They also work differently depending on the position value. 
+ HTML elements are positioned static by default. */
+
+.static { /* pozycja nie zmienia się */
+left: 700px;
+bottom: 50px;
+margin: 20px;
+border: solid 5px green;
+position: static;
+}
+body{
+	padding-bottom: 2000px;
+}
+
+.relative { /* pozycja zmienia się. Punktem odniesienia jest orygianlna pozycja na samym początku */
+left: 700px;
+bottom: 50px; /* skoro punktem odniesienia jest orygianlna pozycja na samym początku to bez marginesu
+					"bottom" byłby niżej. Nie jest na dole strony jak np. fixed */
+margin: 20px;
+border: solid 5px lightblue;
+position: relative;
+}
+
+.fixed { /* pozycja zmienia się. Punktem odniesienia jest układ strony na samym początku. Gdy 
+			zmniejsza się strona to pozostaje na swoim miajscu cały czas*/
+left: 700px;
+bottom: 50px;
+margin: 20px;
+border: solid 5px purple;
+position: fixed;
+}
+
+.absolute { /* pozycja zmienia się. Punktem odniesienia jest jego najbliższy rodzic*/
+left: 700px;
+bottom: 80px;
+margin: 20px;
+border: solid 5px red;
+position: absolute;
+}
+
+.sticky { 
+left: 700px;
+margin: 20px;
+bottom: 80px;
+top: 0px;
+border: solid 5px orange;
+  position: -webkit-sticky;
+position: sticky;
+}

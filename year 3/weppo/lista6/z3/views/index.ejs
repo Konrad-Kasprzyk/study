@@ -1,0 +1,28 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+	<form method="POST" action="http://localhost:3000/index.ejs">
+		Wartość z session: <br> <%= sessionValue %> <br> <%= sessionValue2 %> <br>
+		Wartość z cookie: <br> <%= cookieValue %> <br>
+		<input type="checkbox" name="box_data" value="dodano date"> wyswietl obecną datę<br>
+		<input type="checkbox" name="box_usun" value="usunieto date"> usun daty<br>
+		<input type="checkbox" name="box_data2" value="dodano date 2"> wyswietl drugą obecną datę<br>
+		<input type="checkbox" name="box_cookie_set" value="ustawiono cookie"> ustaw na nowo cookie<br>
+		<input type="checkbox" name="box_cookie_del" value="usunieto cookie"> usun cookie<br>
+		<button>Refresh</button>
+	</form>
+
+
+		
+</body>
+
+</html>

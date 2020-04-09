@@ -1,0 +1,30 @@
+
+
+.relative { /* pozycja zmienia się. Punktem odniesienia jest orygianlna pozycja na samym początku */
+right: 0px;
+bottom: 50px; /* skoro punktem odniesienia jest orygianlna pozycja na samym początku to bez marginesu
+					"bottom" byłby niżej. Nie jest na dole strony jak np. fixed */
+margin: 20px;
+border: solid 5px lightblue;
+position: relative;
+}
+
+
+.absolute { /* pozycja zmienia się. Punktem odniesienia jest jego najbliższy rodzic*/
+right: 0px;
+bottom: 50px; /* odległość "bottom" jest liczony w odniesieniu o dolną krawędź rodzica */
+margin: 20px;
+border: solid 5px red;
+position: absolute;
+}
+
+.sticky { 
+left: 700px;
+margin: 20px;
+bottom: 50px;  /* bottom i top nie wpływają na to jak "sticky" jest na początku ustawione,
+					wpływają tylko na to gdzie będą przylegać po scrollowaniu */
+top: 0px;
+border: solid 5px orange;
+  position: -webkit-sticky;
+position: sticky;
+}

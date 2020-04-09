@@ -1,0 +1,58 @@
+.a {
+    display: inline; /* the default for span */
+	margin: 30px;
+	top: 50px;
+    width: 300px;
+    height: 100px;
+	top: 40px;
+    padding: 5px;
+    border: 1px solid blue;    
+    background-color: yellow; 
+}
+
+.b {
+    display: inline-block;
+	margin: 30px;
+    width: 300px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid blue;        
+    background-color: yellow; 
+}
+
+.c {
+    display: block; /* the default for div */
+	margin: 30px;
+    width: 300px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid blue;        
+    background-color: yellow; 
+}
+
+.d {
+	margin: 30px;
+    width: 300px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid blue;        
+    background-color: yellow; 
+}
+.e{
+	box-sizing: border-box; /* całość z padding, margin, border to width czyli 300px */
+	margin: 30px;
+    width: 300px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid blue;        
+    background-color: yellow; 
+}
+.f {
+	box-sizing: content-box; /* cała szerokość to width+padding+margin+border */
+	margin: 30px;
+    width: 300px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid blue;        
+    background-color: yellow; 
+}

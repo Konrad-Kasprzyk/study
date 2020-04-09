@@ -1,0 +1,2 @@
+Dlugosc w bajtach przesylanej zawartosci (wylaczajac czesc naglówkowa). Naglówek obowiazkowy dla danych wysylanych z serwera, oraz przy korzystaniu z metody POST.
+Sam sie dopisze w fiddlerze, gdy nie ustawisz

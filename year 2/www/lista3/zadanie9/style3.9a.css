@@ -1,0 +1,46 @@
+.textWithBlurredBg{
+    width:300px;
+    height:auto;
+    display:inline-block;
+    position:relative;
+    transition:.3s;
+    margin:4px;
+  }
+ 
+  .textWithBlurredBg img{
+    width:100%;
+    height:100%;
+    transition:.3s; /* ustala jak szybko ma się wykonać jakiś efekt
+                      i jakie części mają się zmienić, tutaj tylko czas
+                      jest ustalony więc cały obrazek się zmieni a nie
+                      np. szerokość. efekt to :hover, po najechaniu wykona
+                      się coś w 0.3 sekundy */
+    border-radius:4px;
+  }
+ 
+  .textWithBlurredBg:hover img{
+    filter:blur(3px) brightness(70%); /* dodaje filtry, takie efekty. Może być
+                                        rozmazany, podświetlony, poszarzony itd */
+    box-shadow:0 0 16px cyan; /* dodaje cień naokoło obrazka */
+  }
+   
+  .textWithBlurredBg :not(img){
+    position:absolute;
+    z-index:1;
+    top:30%;
+    width:100%;
+    text-align:center;
+    color:#fff;
+    opacity:0;  /* powoduje że nie widać napisu =0.00 znaczy nie widać
+                    =0.5 obrazek w połowie przeźroczysty =1 widać normalnie
+                    czyli nie widać od razu napisu na obrazku dzięki temu */
+    transition:.3s;
+  }
+ 
+  .textWithBlurredBg h3{
+    top:50%
+  }
+ 
+  .textWithBlurredBg:hover :not(img){
+    opacity:1;
+  }

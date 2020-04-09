@@ -1,0 +1,17 @@
+by sprawdzic up:
+	nslookup www.ii.uni.wroc.pl
+	nslookup www.uj.edu.pl
+
+by wziac odpowiedz z autorytatywngo serwera:
+
+	Use the -type=soa option to tell nslookup to display the authoritative name server
+
+		nslookup -type=soa www.ii.uni.wroc.pl
+			nslookup www.ii.uni.wroc.pl swiatowit.ii.uni.wroc.pl
+		nslookup -type=soa www.uj.edu.pl
+			nslookup www.uj.edu.pl theta.uoks.uj.edu.pl
+
+by sprawdzic serwery poczty:
+	( mail exchanger= )
+	nslookup -querytype=mx www.uni.wroc.pl
+	nslookup -querytype=mx www.uj.edu.pl

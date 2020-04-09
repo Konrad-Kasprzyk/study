@@ -1,0 +1,59 @@
+.box1{
+	background-color: yellow;
+	width: 400px;
+	height: 400px;	
+	margin: 20px;
+}
+
+.box1 > div{
+	float:right;
+	border: solid 5px green;
+}
+
+.box1 > p{
+	clear: right;
+}
+
+.box2{
+	background-color: yellow;
+	width: 400px;
+	height: 400px;		
+	margin: 20px;
+}
+
+.box2 > div{
+	float:right;
+	border: solid 5px green;
+}
+
+.box2 > p{
+	clear: left;
+}
+
+.box3{
+	background-color: yellow;
+	width: 400px;
+	height: 400px;		
+	margin: 20px;
+}
+
+.box3 > div{
+	float:right;
+	border: solid 5px green;
+}
+
+.box3 > p{
+	clear: both;
+}
+
+.box4{
+	background-color: yellow;
+	width: 400px;
+	height: 400px;		
+	margin: 20px;
+}
+
+.box4 > div{
+	float:right;
+	border: solid 5px green;
+}

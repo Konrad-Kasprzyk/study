@@ -1,0 +1,17 @@
+HTTP to skrót od Hypertext Transfer Protocol i jest to glówny protokól uzywany wspólczesnie w przegladarkach. 
+Jest to protokól bezstanowy, tzn. ani serwer (ani klient) nie przechowuje informacji o tym, jakie byly wczesniej 
+zapytania pomiedzy okreslonym serwerem i klientem oraz nie posiada stanu wewnetrznego. Powoduje to, ze kazde zapytanie 
+do serwera traktowane jest jako ‘nowe’, z punktu widzenia serwera aplikacji niemozliwe do powiazania z informacjami np.
+o zalogowanym uzytkowniku. Ta bezstanowosc mozna obejsc, obecnie glównie za pomoca tzw. ciasteczek (bedzie o nich nieco dalej), 
+nalezy jednak pamietac, ze HTTP sam w sobie jest bezstanowy.
+
+
+Ze wzgledu na bezstanowosc protokolu HTTP, niezbedny jest sposób na kazdorazowe przekazywanie informacji pomiedzy przeladowaniami witryny.
+ Przykladem jest tutaj informacja o "byciu zalogowanym", tak aby nie trzeba bylo podawac za kazdym razem hasla.
+ Problem ten mozna rozwiazac przez rozpoczecie sesji, która w ujeciu WWW oznacza uniwersalny, spersonalizowany worek
+ do przechowywania danych po stronie serwera. W sesji mozna przechowywac dowolne wartosci, np. adres IP klienta, 
+odwiedzone przez niego podstrony, wybrane produkty w sklepie internetowym, informacja o zalogowaniu, identyfikatory itp.
+ Dla kazdego klienta tworzona jest osobna sesja, dzieki temu informacje te nie mieszaja sie pomiedzy róznymi uzytkownikami danej strony.
+ Serwer musi posiadac sposób na rozpoznawanie, która sesja nalezy do którego klienta. 
+Osiagane jest to poprzez stosowanie identyfikatora sesji, który po stronie klienta jest na ogól przechowywany w ciasteczku
+ lub rzadziej w tresci URL-a.

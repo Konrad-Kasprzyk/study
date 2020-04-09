@@ -1,0 +1,67 @@
+body{
+    margin: 0;
+}
+
+
+#container{
+    position: relative;
+    background-color: orange;
+    width: 100vw;
+    height: 100vh;
+}
+
+#srodek{
+    background-color: #cc0000;
+    position: absolute;
+    width: 20vh;
+    height: 20vh;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+}
+
+.kwadrat{
+    position: absolute;
+    width: 10vh;
+    height: 10vh;
+    background-color: #009933;
+}
+
+#timer{
+    text-align: start;
+    position: relative;
+    width: 200px;
+    height: 70px;
+    background-color: blueviolet
+}
+
+#czas{
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translateY(-50%) translateX(-50%);
+    color: cyan;
+    font-size: 200%;
+}
+
+#przedCzasem{
+    position: absolute;
+    top: 50%;
+    font-size: 200%;
+    color: cyan;
+    transform: translateY(-50%);
+}
+
+#restart{
+    text-align: center;
+    vertical-align: middle;
+    width: 200px;
+    font-size: 150%;
+    background-color: gainsboro;
+    color: rgb(248, 9, 248);
+}
+
+.wyniki{ 
+    font-size: 150%;
+    margin-left: 2%;
+}

@@ -1,0 +1,9 @@
+POST	http://pierwszastrona321.azurewebsites.net/6.8.php
+
+Cookie: ciastko1=choco; ciastko2=strawberry
+Host: pierwszastrona321.azurewebsites.net
+Content-Length: 0
+
+
+
+bez body

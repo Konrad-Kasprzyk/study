@@ -1,0 +1,35 @@
+div {
+    width: 300px;
+    border: 25px solid green;
+    padding: 25px;
+    margin: auto; /* wyśrodkowanie diva */
+	text-align: center; /* wyśrodkowanie tekstu w divie */
+}
+
+
+div#block {
+	display: block;
+    width: 300px;
+    border: 25px solid blue;
+    padding: 25px;
+    margin: auto; /* wyśrodkowanie diva */
+	text-align: center; /* wyśrodkowanie tekstu w divie */
+}
+
+div#inline {
+	display: inline;
+    width: 300px;
+    border: 25px solid blue;
+    padding: 25px;
+    margin: auto; /* wyśrodkowanie diva */
+	text-align: center; /* wyśrodkowanie tekstu w divie */
+}
+
+div#inline-block {
+	display: inline-block;
+    width: 300px;
+    border: 25px solid blue;
+    padding: 25px;
+    margin: auto; /* wyśrodkowanie diva */
+	text-align: center; /* wyśrodkowanie tekstu w divie */
+}

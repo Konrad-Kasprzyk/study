@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pl">
+
+<head>
+<title>zadanie 3.3</title>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="style3.3.css" type="text/css"/>
+</head>
+
+<body>
+
+<div class="static"> static div </div>
+<br>
+<div class="relative"> relative div </div>
+<br>
+<div class="fixed"> fixed div </div>
+<br>
+<div class="absolute"> absolute div (rodzic to cała strona) </div>
+<br>
+<div class="sticky"> sticky div </div>
+<br>
+
+<div style="left:50px; position: relative;"> 
+	div odsunięty o 50 px w prawo
+		<div class="absolute"> 
+			absolute div gdzie rodzicem jest: "div odsunięty o 50 px w prawo"
+		</div>
+</div>
+<br>
+<div style="left:150px; position: relative;"> 
+	div odsunięty o 150 px w prawo
+		<div class="relative"> 
+			relative div gdzie rodzicem jest: "div odsunięty o 150 px w prawo"
+		</div>
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+http://pierwszastrona321.azurewebsites.net/6.7.php
+
+User-Agent: Fiddler
+If-None-Match: nutella
+If-Modified-Since: Sat, 15 Dec 2018 20:30:07 GMT
+Host: pierwszastrona321.azurewebsites.net

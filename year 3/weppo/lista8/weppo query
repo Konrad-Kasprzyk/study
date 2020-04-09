@@ -1,0 +1,12 @@
+CREATE TABLE OSOBA
+(
+	id SERIAL PRIMARY KEY,
+	imie text,
+	nazwisko text,
+	plec char
+);
+
+insert into OSOBA (imie, nazwisko, plec)
+VALUES ('Dawid','Szklarz','m')
+
+SELECT * from OSOBA WHERE plec='m'

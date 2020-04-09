@@ -1,0 +1,46 @@
+#verticalbox{     
+    display: flex;
+    flex-direction: column;
+    height:100vh;
+}
+
+#horizontalbox1{
+    flex-grow: 1;	
+    display: flex;
+}
+
+#horizontalbox1 > div#logo{
+	flex-grow: 1;
+	background-color: blue;	
+    position: relative;	
+}
+
+#horizontalbox1 > div#header{
+	flex-grow: 4;
+	background-color: red;		
+}
+
+#horizontalbox2{
+    flex-grow: 4;	
+    display: flex;
+}
+
+#horizontalbox2 > div#menu{
+	flex-grow: 1;
+	background-color: gold;
+}
+
+#horizontalbox2 > div#content{
+	flex-grow: 3;
+	background-color: greenyellow;	
+}
+
+#horizontalbox2 > div#submenu{
+	flex-grow: 1;
+	background-color: yellow;	
+}
+
+#horizontalbox3{
+flex-grow: 1;
+background-color: green;
+}

@@ -1,0 +1,19 @@
+POST	http://localhost/6.3php/?name=Konrad&jedzenie=babeczke
+
+Host: localhost
+Content-Type: multipart/form-data; boundary="oddzielamTekst"
+Content-Length: 264
+
+--oddzielamTekst
+Content-Disposition: form-data; name="test1"
+
+pierwsza wartosc
+--oddzielamTekst
+Content-Disposition: form-data; name="test2"
+
+druga wartosc
+--oddzielamTekst
+Content-Disposition: form-data; name="test3"
+
+trzecia wartosc
+--oddzielamTekst--

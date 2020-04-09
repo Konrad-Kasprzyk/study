@@ -1,0 +1,26 @@
+.klasa{
+	background-color: blue;
+	font-size: 70px;	
+}
+body{
+	background-color: yellow;
+}
+div{
+	text-align: center;
+	background-color: red;
+}
+#numerId{
+	text-align: right;
+	background-color: green;
+}
+/*Selects all <p> elements where the parent is a <div> element      div > p     */
+/* jeżeli div jest dzieckiem div, to ma takie właściwości*/
+div > div { background-color: pink; }
+ul > li { background-color: pink; }
+/*Selects all <p> elements that are placed immediately after <div> elements        div + p      */
+/* jeżeli h3 występuje po h2, to ma takie właściwości*/
+h2 + h3 {font-size: 100px; background-color: orange}
+h3 + h2 {font-size: 100px; background-color: black}
+/* jeżeli w section występuje p, to wtedy ma takie właściwości    */
+section p {font-size : 30px; background-color: purple}
+aside p {font-size : 30px; background-color: purple}

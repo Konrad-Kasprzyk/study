@@ -1,0 +1,65 @@
+html, body{
+height: 100%;
+margin: 0;
+}
+
+#verticalbox{     
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /*  height:100vh; oznacza 100% ekranu wyświetlanego przez przeglądarki,
+         nie trzeba wtedy w html,body nic zmieniać, ale możen nie działać 
+        na starszych przeglądarkach */
+}
+
+#horizontalbox1{
+    flex-grow: 1;	
+    display: flex;
+}
+
+#horizontalbox1 > div#logo{
+    flex-basis: 200px;
+	flex-grow: 4;
+	background-color: blue;	
+    position: relative;	
+}
+
+div#logo > *{
+	background-color: pink;	
+	position: absolute;               
+	top: 50%;                    /* sposób na ustawienie elementów pośrodku w wysokości, jednak
+									tym  sposobem kolejne divy nachodzą na siebie w tym boxie */
+    transform: translate(0, -50%);
+}
+
+#horizontalbox1 > div#header{
+    flex-basis: 800px;
+	flex-grow: 8;
+	background-color: red;	
+	/* align-items: center;	 	drugi sposób na wyśrodkowanie elementów, wadą jest że gdy damy 
+								display: flex; to przesuwa się gdy dajemy kolejne divy w tym boxie
+	display: flex;    */
+}
+
+#horizontalbox2{
+    flex-grow: 4;	
+    display: flex;
+}
+
+#horizontalbox2 > div#menu{
+    flex-basis: 200px;
+	flex-grow: 4;
+	background-color: green;
+}
+
+#horizontalbox2 > div#content{
+    flex-basis: 800px;
+	flex-grow: 8;
+	background-color: greenyellow;	
+}
+
+#horizontalbox3{
+    background-color: pink;
+    flex-grow: 1;
+}
+

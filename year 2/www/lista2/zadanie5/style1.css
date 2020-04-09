@@ -1,0 +1,32 @@
+.klasa{
+	background-color: blue;
+	font-size: 70px;	
+}
+:root{
+	background-color: yellow;
+}
+div{
+	text-align: center;
+	background-color: white;
+}
+#numerId{
+	text-align: right;
+	background-color: green;
+}
+
+li:nth-child(3) { background-color: pink; }
+li:last-child { background-color: gray; }
+
+div:nth-of-type(2n) { font-size: 30px; }
+div:first-of-type { background-color: black; }
+div:last-of-type { background-color: purple; }
+/*
+div:nth-child(2n) { background-color: pink; }
+div:last-child { background-color: gray; }
+div:first-child:empty { padding: 10px; border: solid 5px green; background-color: orange; }
+
+div:not(:nth-last-of-type(3n)):not(:nth-child(2)) { background-color: brown; }*/
+
+/*div div div:nth-child(2) { background-color: pink; }*/
+
+p::selection { background-color: red; border: solid 5px black; }

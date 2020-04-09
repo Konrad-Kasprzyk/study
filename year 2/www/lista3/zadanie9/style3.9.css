@@ -1,0 +1,49 @@
+.blurPhotos{
+    width: 300px;
+    height: auto; /* fajny trik by obraz sam się zmniejszył do kwadratu 
+                      300 na 300 lub 300 na coś mniejszego gdy jest podłużny */
+    display:inline-block;
+    position:relative;
+    margin:9px;
+  }
+ 
+  .blurPhotos img{
+    transition: 0.5s;
+    width:100%;
+    height:100%;
+     /* ustala jak szybko ma się wykonać jakiś efekt
+                      i jakie części mają się zmienić, tutaj tylko czas
+                      jest ustalony więc cały obrazek się zmieni a nie
+                      np. szerokość. efekt to :hover, po najechaniu wykona
+                      się coś w 0.3 sekundy */
+    border-radius:40px; /* ustawia zaokrąglone rogi obrazu */
+  }
+ 
+   
+  .blurPhotos :not(img){
+    transition: 0.5s;
+    position:absolute;
+    z-index:1; /* jak w unity 2D oś z, bez niego i tak napis jest
+                    jest z przodu bo tak w html dałeś*/                    
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%); 
+    font-size: 40px; 
+    font-weight: bold;
+    color:whitesmoke;
+    opacity:0;  /* powoduje że nie widać napisu =0.00 znaczy nie widać
+                    =0.5 obrazek w połowie przeźroczysty =1 widać normalnie
+                    czyli nie widać od razu napisu na obrazku dzięki temu */
+  }
+
+  .blurPhotos:hover img{
+    filter:blur(4px); /* dodaje filtry, takie efekty. Może być
+                                        rozmazany, podświetlony, poszarzony itd */
+    box-shadow:10px -30px 20px cyan; /* dodaje cień naokoło obrazka, po kolei
+    jak daleko cień ma pójść w pionie, poziomie, jak szeroki ma być, kolor.
+    Ustawienie 0 0 20px to cień równo naokoło o szerokości 20px*/
+  }
+ 
+  .blurPhotos:hover :not(img){
+    opacity:1;
+  }

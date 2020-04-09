@@ -1,0 +1,14 @@
+
+
+.relative { /* pozycja zmienia się. Punktem odniesienia jest orygianlna pozycja na samym początku */
+padding: 30px;
+margin: 10px;
+border: solid green 10px;
+position: relative;
+}
+
+
+.absolute { /* pozycja zmienia się. Punktem odniesienia jest jego najbliższy rodzic*/
+transform: translateY(-50%); /* ??? */
+position: absolute;
+}

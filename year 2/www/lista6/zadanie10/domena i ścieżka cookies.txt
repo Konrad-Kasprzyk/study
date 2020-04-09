@@ -1,0 +1,12 @@
+Domena cisteczka odpowiada za to do jakiego hosta zostanie wyslane ciastko (gdzie bedzie dostepne),
+czyli na jaki adres przegladarka wysle ciastko.
+
+Na azurze w php.10:
+// domeny: pierwszastrona321.azurewebsites.net i pierwszastrona321.azurewebsites.net/6.10.php 
+// spowoduja ze ciastko sie wyswietli, ale domena: pierwszastrona321.azurewebsites.net/6.8.php 
+// sprawi, ze ciastko nie zostanie wyslane do tej strony
+
+Sciezka ciasteczka odpowiada w jakich podstronach w adresie url bedzie dostepne ciasteczko,
+pusta sciezka "/" oznacza ze we wszystkich podstronach bedzie ciastko dostepne, 
+"/zadanie10/" oznacza, ze w folderze (podstronie) zadanie10 kazda strona bedzie miala do
+ciastka dostep
