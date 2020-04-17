@@ -1,7 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="a713c1e1-2897-4bb0-ad5a-cb9e54b329d4" name="Default Changelist" comment="" />
+    <list default="true" id="a713c1e1-2897-4bb0-ad5a-cb9e54b329d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/META-INF/java.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/AlphabeticalBillPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/AlphabeticalBillPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/AreaCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/AreaCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/BillPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/BillPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/ButterAndFatSpreadableTaxType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/ButterAndFatSpreadableTaxType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/ByPriceBillPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/ByPriceBillPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/CashRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/CashRegister.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/CashRegister2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/CashRegister2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/DoubleMultTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/DoubleMultTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/DoubleObjMultTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/DoubleObjMultTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/IntAddTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/IntAddTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/IntObjAddTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/IntObjAddTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/Item.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/Item.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/Item2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/Item2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/NormalBillPrinter.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/NormalBillPrinter.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/NormalTaxType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/NormalTaxType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/Rectangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/Square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/TaxCalculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/TaxCalculator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/TaxCalculator2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/TaxCalculator2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/TaxType.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/TaxType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/TestController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/TestController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/l3z1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/l3z1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/l3z3_po_zmianach.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/l3z3_po_zmianach.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/l3z3_przed_zmianami.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/l3z3_przed_zmianami.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/java/l3/l3z4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/l3/l3z4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/java.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/META-INF/java.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/FiveSecondsSingleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/FiveSecondsSingleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/ProcessSingleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/ProcessSingleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/SingletonTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/SingletonTest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/SingletonTest$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/SingletonTest$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/SingletonTest$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/SingletonTest$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/SingletonTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/SingletonTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/ThreadSingleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z1/ThreadSingleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/IShape.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/IShape.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/IShapeFactoryWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/IShapeFactoryWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/ShapeFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/ShapeFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/ShapeFactoryTest$Rectangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/ShapeFactoryTest$Rectangle.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/ShapeFactoryTest$RectangleFactoryWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/ShapeFactoryTest$RectangleFactoryWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/ShapeFactoryTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/ShapeFactoryTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/Square.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/Square.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/SquareFactoryWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z2/SquareFactoryWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/APlanePoolWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/APlanePoolWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/BusinessPlane.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/BusinessPlane.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/BusinessPlanePoolWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/BusinessPlanePoolWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/EconomicPlane.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/EconomicPlane.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/EconomicPlanePoolWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/EconomicPlanePoolWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/Plane.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/Plane.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/PlanePool.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/PlanePool.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/PlanePoolTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../l4/java/out/production/java/l4z3/PlanePoolTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,11 +93,22 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
   <component name="ProjectId" id="1Zl8eGleBSqdqmHSISjzgTi7AWo" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager" selected="Application.l3z1">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
@@ -84,10 +174,10 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="Application.l3z4" />
-      <item itemvalue="Application.l3z3_przed_zmianami" />
-      <item itemvalue="Application.l3z3_po_zmianach" />
       <item itemvalue="Application.l3z1" />
+      <item itemvalue="Application.l3z3_po_zmianach" />
+      <item itemvalue="Application.l3z3_przed_zmianami" />
+      <item itemvalue="Application.l3z4" />
     </list>
     <recent_temporary>
       <list>
@@ -112,34 +202,62 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="440" y="94" key="#Project_Structure" timestamp="1586867197693">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="440" y="94" key="#Project_Structure/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586867197693" />
     <state x="703" y="191" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585559074823">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="703" y="191" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1585559074823" />
-    <state width="1877" height="278" key="GridCell.Tab.0.bottom" timestamp="1585584944403">
-      <screen x="1920" y="0" width="1280" height="693" />
+    <state x="739" y="261" key="FileChooserDialogImpl" timestamp="1587026213848">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="739" y="261" key="FileChooserDialogImpl/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587026213848" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1586867273762">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="278" key="GridCell.Tab.0.bottom/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1585583229900" />
     <state width="1877" height="278" key="GridCell.Tab.0.bottom/1920.0.1280.693/0.0.1920.1040@1920.0.1280.693" timestamp="1585584944403" />
-    <state width="1877" height="278" key="GridCell.Tab.0.center" timestamp="1585584944403">
-      <screen x="1920" y="0" width="1280" height="693" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586867273762" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1586867273762">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="278" key="GridCell.Tab.0.center/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1585583229900" />
     <state width="1877" height="278" key="GridCell.Tab.0.center/1920.0.1280.693/0.0.1920.1040@1920.0.1280.693" timestamp="1585584944403" />
-    <state width="1877" height="278" key="GridCell.Tab.0.left" timestamp="1585584944402">
-      <screen x="1920" y="0" width="1280" height="693" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586867273762" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1586867273762">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="278" key="GridCell.Tab.0.left/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1585583229900" />
     <state width="1877" height="278" key="GridCell.Tab.0.left/1920.0.1280.693/0.0.1920.1040@1920.0.1280.693" timestamp="1585584944402" />
-    <state width="1877" height="278" key="GridCell.Tab.0.right" timestamp="1585584944403">
-      <screen x="1920" y="0" width="1280" height="693" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586867273762" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1586867273762">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="278" key="GridCell.Tab.0.right/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1585583229900" />
     <state width="1877" height="278" key="GridCell.Tab.0.right/1920.0.1280.693/0.0.1920.1040@1920.0.1280.693" timestamp="1585584944403" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1586867273762" />
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1585576323632">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="661" y="344" key="com.intellij.ide.util.TipDialog/1920.0.1280.693/0.0.1920.1040@0.0.1920.1040" timestamp="1585576323632" />
+    <state x="342" y="140" key="new project wizard" timestamp="1587026217322">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="342" y="140" key="new project wizard/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1587026217322" />
   </component>
 </project>
