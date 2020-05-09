@@ -21,6 +21,14 @@ class Return:
         pass
 
     @property
+    def Accepted(self):
+        pass
+
+    @Accepted.setter
+    def Accepted(self):
+        pass
+
+    @property
     def Description(self):
         pass
 

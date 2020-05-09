@@ -6,7 +6,10 @@ class AdminInterface(Interface):
     def GetAllPickups(self, package_code):
         pass
 
-    def MakeReturn(self, package_code, value):
+    def AcceptReturn(self, package_code, value):
+        pass
+
+    def DeclineReturn(self, package_code, description):
         pass
 
     def ShowPackageInfo(self, package_code):
@@ -15,14 +18,17 @@ class AdminInterface(Interface):
     def ChangePackageStatus(self, package_code, new_status):
         pass
 
-    def NewDelivery(self, client_id, delivery_method, address, value, items):
-        pass
-
     def ShowDeliveryMethods(self):
         pass
 
-    def ShowPackages(self):
+    def ChangeDeliveryMethod(self, name, new_value):
         pass
 
-    def ShowReturns(self):
+    def AddDeliveryMethod(self, name, value):
+        pass
+
+    def ShowPackages(self, filter):
+        pass
+
+    def ShowReturns(self, filter):
         pass

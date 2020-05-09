@@ -33,6 +33,10 @@ class Package:
         pass
 
     @property
+    def DeliveryMethod(self):
+        pass
+
+    @property
     def DeliveryDate(self):
         pass
 
