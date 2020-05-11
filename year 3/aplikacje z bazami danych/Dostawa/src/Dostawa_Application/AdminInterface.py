@@ -6,12 +6,6 @@ class AdminInterface(Interface):
     def GetAllPickups(self, package_code):
         pass
 
-    def AcceptReturn(self, package_code, value):
-        pass
-
-    def DeclineReturn(self, package_code, description):
-        pass
-
     def ShowPackageInfo(self, package_code):
         pass
 
@@ -28,6 +22,12 @@ class AdminInterface(Interface):
         pass
 
     def ShowPackages(self, filter):
+        pass
+
+    def AcceptReturn(self, package_code, value):
+        pass
+
+    def DeclineReturn(self, package_code, description):
         pass
 
     def ShowReturns(self, filter):

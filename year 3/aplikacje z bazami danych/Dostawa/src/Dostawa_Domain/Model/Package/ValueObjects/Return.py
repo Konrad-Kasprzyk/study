@@ -1,15 +1,19 @@
+from datetime import datetime
+
+
 class Return:
 
+    def __init__(self, Description, Sum = 0):
+        self._Description = Description
+        self._Sum = Sum
+        self._ReportDate = datetime.now()
+
     @property
-    def PackageCode(self):
+    def Sum(self):
         pass
 
     @property
-    def Amount(self):
-        pass
-
-    @Amount.setter
-    def Amount(self):
+    def ReportDate(self):
         pass
 
     @property

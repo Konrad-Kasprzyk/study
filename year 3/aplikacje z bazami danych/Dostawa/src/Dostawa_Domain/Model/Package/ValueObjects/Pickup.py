@@ -1,25 +1,36 @@
+from datetime import datetime
+
+
 class PickUp:
+
+    def __init__(self, ProductName, Amount = 1):
+        self._IsPacked = False
+        self._Productname = ProductName
+        self._Amount = Amount
+        self._PackingDate = None
 
     @property
     def Productname(self):
-        pass
+        return self._Productname
 
     @property
     def Amount(self):
-        pass
+        return self._Amount
 
     @property
     def IsPacked(self):
-        pass
+        return self._IsPacked
 
     @IsPacked.setter
-    def IsPacked(self):
-        pass
+    def IsPacked(self, value):
+        if isinstance(value, bool):
+            self._IsPacked = value
 
     @property
     def PackingDate(self):
-        pass
+        return self._PackingDate
 
     @PackingDate.setter
-    def PackingDate(self):
-        pass
+    def PackingDate(self, value):
+        if isinstance(value, datetime):
+            self._PackingDate = value

@@ -1,19 +1,34 @@
+from datetime import datetime
+from .Repositories import Status
+
+
 class Package:
 
+    def __init__(self, City, PostalCode, StreetAddress, ClientId, DeliveryMethod, DeclaredValue=0):
+        self._City = City
+        self._PostalCode = PostalCode
+        self._StreetAddress = StreetAddress
+        self._ClientId = ClientId
+        self._DeliveryMethod = DeliveryMethod
+        self._DeclaredValue = DeclaredValue
+        self._AcceptDate = datetime.now()
+        self._pickups = []
+        self._Status = Status()
+
     @property
-    def Address(self):
-        pass
+    def City(self):
+        return self.City
 
-    @Address.setter
-    def Address(self):
+    @property
+    def PostalCode(self):
         pass
 
     @property
-    def Value(self):
+    def StreetAddress(self):
         pass
 
-    @Value.setter
-    def Value(self):
+    @property
+    def DeclaredValue(self):
         pass
 
     @property
@@ -25,10 +40,6 @@ class Package:
         pass
 
     @property
-    def AcceptDate(self):
-        pass
-
-    @AcceptDate.setter
     def AcceptDate(self):
         pass
 
@@ -46,20 +57,26 @@ class Package:
 
     @property
     def Status(self):
-        pass
+        return self._Status.Name
 
     @Status.setter
-    def Status(self):
-        pass
+    def Status(self, value):
+        self._Status.Name = value
 
     # Użyj do tworzenia obiektu przesylki
     def AddDeliveryProduct(self, product_name, quantity):
         pass
 
     # Użyj przy wkładaniu pobranych produktów z magazynu do przesyłki
-    def MarkPackedProduct(self, product_name, quantity, packing_date):
+    def MarkPackedProduct(self, product_name, packing_date):
         pass
 
     # Zwraca zawartość przesyłki
     def GetPackageProducts(self):
+        pass
+
+    def MakeReturn(self, description, sum_=DeclaredValue):
+        pass
+
+    def GetReturn(self):
         pass
