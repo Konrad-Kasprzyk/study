@@ -9,7 +9,7 @@ class IPackageRepository(Interface):
     def Find(self, package_code):
         pass
 
-    def FindFilter(self, filter):
+    def FindFilter(self, filter_):
         pass
 
     def FindAll(self):
@@ -18,5 +18,9 @@ class IPackageRepository(Interface):
     def MakePersistent(self, package):
         pass
 
-    def GetAllPackageStatuses(self):
+    def FindAllPackageStatuses(self):
+        pass
+
+    # dla transportu, np. transport nie może ustawić statusu paczki na anulowane
+    def FindAllLimitedPackageStatuses(self):
         pass

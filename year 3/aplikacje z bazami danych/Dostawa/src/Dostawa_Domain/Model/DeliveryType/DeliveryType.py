@@ -13,6 +13,8 @@ class DeliveryTpe:
     def Name(self, value):
         if isinstance(value, str):
             self._Name = value
+        else:
+            raise ValueError("Name must be a string")
 
     @property
     def Price(self):
@@ -22,6 +24,8 @@ class DeliveryTpe:
     def Price(self, value):
         if isinstance(value, int):
             self._Price = value
+        else:
+            raise ValueError("Price must be an integer")
 
     @property
     def DeliveryTime(self):

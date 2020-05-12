@@ -3,16 +3,25 @@ from interface import Interface
 
 class AdminInterface(Interface):
 
-    def GetAllPickups(self, package_code):
+    def GetAllPackages(self):
         pass
 
-    def ShowPackageInfo(self, package_code):
+    def GetPackagesFilter(self, filter):
+        pass
+
+    def GetPackage(self, package_code):
+        pass
+
+    def GetPackagePickups(self, package_code):
+        pass
+
+    def GetPackageStatuses(self):
         pass
 
     def ChangePackageStatus(self, package_code, new_status):
         pass
 
-    def ShowDeliveryMethods(self):
+    def GetDeliveryMethods(self):
         pass
 
     def ChangeDeliveryMethod(self, name, new_value):
@@ -21,7 +30,16 @@ class AdminInterface(Interface):
     def AddDeliveryMethod(self, name, value):
         pass
 
-    def ShowPackages(self, filter):
+    def DeleteDeliveryMethod(self, name, value):
+        pass
+
+    def GetAllReturns(self):
+        pass
+
+    def GetReturnsFilter(self, filter):
+        pass
+
+    def GetReturn(self, package_code):
         pass
 
     def AcceptReturn(self, package_code, value):
@@ -30,5 +48,4 @@ class AdminInterface(Interface):
     def DeclineReturn(self, package_code, description):
         pass
 
-    def ShowReturns(self, filter):
-        pass
+

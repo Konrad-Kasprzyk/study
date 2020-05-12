@@ -1,6 +1,7 @@
 from interface import implements
 from Dostawa_Domain.Model.Package.Repositories import IPackageRepository
 from Dostawa_Domain.Model.Package import Package
+from Dostawa_Domain.Model.Package.ValueObjects import Status
 
 
 class PackageRepository(implements(IPackageRepository)):
@@ -8,16 +9,13 @@ class PackageRepository(implements(IPackageRepository)):
     def __init__(self):
         self._packages = []
         self._packages.append(Package(City = "Wrocław", PostalCode = "50-043", StreetAddress = "Ruska 38",
-                                      ClientId = 1, DeliveryMethod = "Ekonomiczny", Status = "Przyjete",
-                                      DeclaredValue=100))
+                                      ClientId = 1, DeliveryMethod = "Ekonomiczny", DeclaredValue=100))
         self._packages.append(Package(City = "Wrocław", PostalCode = "51-152", StreetAddress = "Piłsudskiego 7",
-                                      ClientId = 2, DeliveryMethod = "Standard", Status = "Przyjete"))
+                                      ClientId = 2, DeliveryMethod = "Standard"))
         self._packages.append(Package(City="Wrocław", PostalCode="53-659", StreetAddress="Sikorskiego 10",
-                                      ClientId = 3, DeliveryMethod= "Standard", Status="Przyjete",
-                                      DeclaredValue = 50))
+                                      ClientId = 3, DeliveryMethod= "Standard", DeclaredValue = 50))
         self._packages.append(Package(City="Wrocław", PostalCode="53-609", StreetAddress="Fabryczna 12",
-                                      ClientId=4, DeliveryMethod="Ekonomiczny", Status="Przyjete",
-                                      DeclaredValue=200))
+                                      ClientId=4, DeliveryMethod="Ekonomiczny", DeclaredValue=200))
     def Insert(self, package):
         self._packages.append(package)
 
@@ -27,12 +25,12 @@ class PackageRepository(implements(IPackageRepository)):
                 return package
         return None
 
-    def FindFilter(self, filter):
+    def FindFilter(self, filter_):
         matched = []
         for package in self._packages:
             match = True
-            for key in filter:
-                if not getattr(package, key, None) == filter[key]:
+            for key in filter_:
+                if not getattr(package, key, None) == filter_[key]:
                     match = False
                     break
             if match:
@@ -47,11 +45,23 @@ class PackageRepository(implements(IPackageRepository)):
             if self._packages[i].Code == package.Code:
                 self._packages[i] = package
 
-    def GetAllPackageStatuses(self):
+    # Keep sorted by DeliveryStep!
+    def FindAllPackageStatuses(self):
         statuses = []
-        statuses.append("Przyjete")
-        statuses.append("Pakowanie")
-        statuses.append("Wyslane")
-        statuses.append("Dostarczone")
-        statuses.append("Zwrot pieniedzy")
-        statuses.append("Anulowane")
+        statuses.append(Status(DeliveryStep=0, Name="Przyjete"))
+        statuses.append(Status(DeliveryStep=1, Name="Pakowanie"))
+        statuses.append(Status(DeliveryStep=2, Name="Wyslane"))
+        statuses.append(Status(DeliveryStep=3, Name="Dostarczone"))
+        statuses.append(Status(DeliveryStep=4, Name="Problem z Dostawa"))
+        statuses.append(Status(DeliveryStep=5, Name="Zwrot pieniedzy"))
+        statuses.append(Status(DeliveryStep=6, Name="Anulowane"))
+        return statuses
+
+    # Keep sorted!
+    def FindAllLimitedPackageStatuses(self):
+        statuses = []
+        statuses.append(Status(DeliveryStep=1, Name="Pakowanie"))
+        statuses.append(Status(DeliveryStep=2, Name="Wyslane"))
+        statuses.append(Status(DeliveryStep=3, Name="Dostarczone"))
+        statuses.append(Status(DeliveryStep=4, Name="Problem z Dostawa"))
+        return statuses

@@ -25,6 +25,8 @@ class PickUp:
     def IsPacked(self, value):
         if isinstance(value, bool):
             self._IsPacked = value
+        else:
+            raise ValueError("IsPacked must be a bool")
 
     @property
     def PackingDate(self):
@@ -34,3 +36,5 @@ class PickUp:
     def PackingDate(self, value):
         if isinstance(value, datetime):
             self._PackingDate = value
+        else:
+            raise ValueError("PackingDate must be a datetime object")
