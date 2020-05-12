@@ -1,6 +1,9 @@
 from interface import implements
 from Dostawa_Domain.Model.Package.Repositories import IPackageRepository
 from Dostawa_Domain.Model.Package import Package
+from Dostawa_Domain.Model.Package.ValueObjects.Status import DELIVERY_SUCCESS_STATUS, DELIVERY_FAILURE_STATUS,\
+    DELIVERY_STARTING_STATUS
+from Dostawa_Domain.Model.Package.ValueObjects.Return import RETURN_STARTING_STATUS
 from Dostawa_Domain.Model.Package.ValueObjects import Status
 
 
@@ -48,13 +51,12 @@ class PackageRepository(implements(IPackageRepository)):
     # Keep sorted by DeliveryStep!
     def FindAllPackageStatuses(self):
         statuses = []
-        statuses.append(Status(DeliveryStep=0, Name="Przyjete"))
+        statuses.append(Status(DeliveryStep=0, Name=DELIVERY_STARTING_STATUS))
         statuses.append(Status(DeliveryStep=1, Name="Pakowanie"))
         statuses.append(Status(DeliveryStep=2, Name="Wyslane"))
-        statuses.append(Status(DeliveryStep=3, Name="Dostarczone"))
-        statuses.append(Status(DeliveryStep=4, Name="Problem z Dostawa"))
-        statuses.append(Status(DeliveryStep=5, Name="Zwrot pieniedzy"))
-        statuses.append(Status(DeliveryStep=6, Name="Anulowane"))
+        statuses.append(Status(DeliveryStep=3, Name=DELIVERY_SUCCESS_STATUS))
+        statuses.append(Status(DeliveryStep=4, Name=DELIVERY_FAILURE_STATUS))
+        statuses.append(Status(DeliveryStep=5, Name="Anulowane"))
         return statuses
 
     # Keep sorted!
@@ -65,3 +67,10 @@ class PackageRepository(implements(IPackageRepository)):
         statuses.append(Status(DeliveryStep=3, Name="Dostarczone"))
         statuses.append(Status(DeliveryStep=4, Name="Problem z Dostawa"))
         return statuses
+
+
+    def FindAllReturnStatuses(self):
+        statuses = []
+        statuses.append(RETURN_STARTING_STATUS)
+        statuses.append("Zwrot pieniedzy")
+        statuses.append("Wyslane ponownie")

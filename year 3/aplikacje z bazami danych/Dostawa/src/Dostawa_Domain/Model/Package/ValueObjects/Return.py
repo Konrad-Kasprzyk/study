@@ -1,5 +1,8 @@
 from datetime import datetime
+from Dostawa_Infrastructure.Repositories import PackageRepository
 
+
+RETURN_STARTING_STATUS = "Niepotwierdzone"
 
 class Return:
 
@@ -8,6 +11,18 @@ class Return:
         self._Sum = Sum
         self._ReportDate = datetime.now()
         self._Accepted = False
+        self._Status = RETURN_STARTING_STATUS
+
+    @property
+    def Status(self):
+        return self._Status
+
+    @Status.setter
+    def Status(self, value):
+        repo = PackageRepository()
+        returnStatuses = repo.FindAllReturnStatuses()
+        if value in returnStatuses:
+            self._Status = value
 
     @property
     def Sum(self):

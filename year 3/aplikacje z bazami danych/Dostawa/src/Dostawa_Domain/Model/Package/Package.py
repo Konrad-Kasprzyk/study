@@ -82,9 +82,7 @@ class Package:
         self._Pickups.append(Pickup(Name=product_name, Amount=quantity))
 
     # Użyj przy wkładaniu pobranych produktów z magazynu do przesyłki
-    def MarkPackedProduct(self, product_name, packing_date):
-        if not isinstance(packing_date, datetime):
-            raise ValueError("Packing date must be a datetime object")
+    def MarkPackedProduct(self, product_name):
         for pickup in self._Pickups:
             if pickup.Name == product_name:
                 pickup.IsPacked = True

@@ -24,3 +24,6 @@ class IPackageRepository(Interface):
     # dla transportu, np. transport nie może ustawić statusu paczki na anulowane
     def FindAllLimitedPackageStatuses(self):
         pass
+
+    def FindAllReturnStatuses(self):
+        pass

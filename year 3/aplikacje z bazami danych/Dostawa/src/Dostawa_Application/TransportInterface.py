@@ -6,7 +6,7 @@ class TransportInterface(Interface):
     def GetlimitedPackage(self, package_code):
         pass
 
-    def GetLimitedPackagesFilter(self, filter):
+    def GetLimitedPackagesFilter(self, filter_):
         pass
 
     def GetAllLimitedPackages(self):
