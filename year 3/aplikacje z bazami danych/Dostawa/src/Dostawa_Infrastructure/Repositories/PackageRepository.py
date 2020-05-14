@@ -43,34 +43,7 @@ class PackageRepository(implements(IPackageRepository)):
     def FindAll(self):
         return self._packages
 
-    def MakePersistent(self, package):
+    def Update(self, package):
         for i in range(len(self._packages)):
             if self._packages[i].Code == package.Code:
                 self._packages[i] = package
-
-    # Keep sorted by DeliveryStep!
-    def FindAllPackageStatuses(self):
-        statuses = []
-        statuses.append(Status(DeliveryStep=0, Name=DELIVERY_STARTING_STATUS))
-        statuses.append(Status(DeliveryStep=1, Name="Pakowanie"))
-        statuses.append(Status(DeliveryStep=2, Name="Wyslane"))
-        statuses.append(Status(DeliveryStep=3, Name=DELIVERY_SUCCESS_STATUS))
-        statuses.append(Status(DeliveryStep=4, Name=DELIVERY_FAILURE_STATUS))
-        statuses.append(Status(DeliveryStep=5, Name="Anulowane"))
-        return statuses
-
-    # Keep sorted!
-    def FindAllLimitedPackageStatuses(self):
-        statuses = []
-        statuses.append(Status(DeliveryStep=1, Name="Pakowanie"))
-        statuses.append(Status(DeliveryStep=2, Name="Wyslane"))
-        statuses.append(Status(DeliveryStep=3, Name="Dostarczone"))
-        statuses.append(Status(DeliveryStep=4, Name="Problem z Dostawa"))
-        return statuses
-
-
-    def FindAllReturnStatuses(self):
-        statuses = []
-        statuses.append(RETURN_STARTING_STATUS)
-        statuses.append("Zwrot pieniedzy")
-        statuses.append("Wyslane ponownie")

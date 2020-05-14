@@ -15,5 +15,5 @@ class IDeliveryTypeRepository(Interface):
     def FindAll(self):
         pass
 
-    def MakePersistent(self, delivery_type):
+    def Update(self, delivery_type):
         pass

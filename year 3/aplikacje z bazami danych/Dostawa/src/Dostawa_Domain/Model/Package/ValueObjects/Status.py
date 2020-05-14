@@ -1,9 +1,5 @@
-from Dostawa_Infrastructure.Repositories import PackageRepository
+from Dostawa_Domain.Model.Package import Package, DELIVERY_STARTING_STATUS
 
-
-DELIVERY_SUCCESS_STATUS = "Dostarczone"
-DELIVERY_FAILURE_STATUS = "Problem z Dostawa"
-DELIVERY_STARTING_STATUS = "Przyjete"
 
 class Status:
 
@@ -25,10 +21,9 @@ class Status:
 
     @Name.setter
     def Name(self, value):
-        repo = PackageRepository()
-        for repo_status in repo.FindAllPackageStatuses():
-            if repo_status.Name == value:
+        for status in Package.FindAllPackageStatuses():
+            if status.Name == value:
                 self._Name = value
-                self.DeliveryStep = repo_status.DeliveryStep
+                self.DeliveryStep = status.DeliveryStep
                 return
         raise ValueError("Status name not found in available statuses")

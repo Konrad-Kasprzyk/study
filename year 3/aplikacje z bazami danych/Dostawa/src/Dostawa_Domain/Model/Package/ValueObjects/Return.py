@@ -1,8 +1,6 @@
 from datetime import datetime
-from Dostawa_Infrastructure.Repositories import PackageRepository
+from Dostawa_Domain.Model.Package import Package, RETURN_STARTING_STATUS
 
-
-RETURN_STARTING_STATUS = "Niepotwierdzone"
 
 class Return:
 
@@ -19,8 +17,7 @@ class Return:
 
     @Status.setter
     def Status(self, value):
-        repo = PackageRepository()
-        returnStatuses = repo.FindAllReturnStatuses()
+        returnStatuses = Package.FindAllReturnStatuses()
         if value in returnStatuses:
             self._Status = value
 

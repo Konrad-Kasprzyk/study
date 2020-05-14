@@ -3,6 +3,11 @@ from .ValueObjects import Status, Pickup, Return
 from Dostawa_Infrastructure.Repositories.DeliveryTypeRepository import DeliveryTypeRepository
 
 
+DELIVERY_SUCCESS_STATUS = "Dostarczone"
+DELIVERY_FAILURE_STATUS = "Problem z Dostawa"
+DELIVERY_STARTING_STATUS = "Przyjete"
+RETURN_STARTING_STATUS = "Niepotwierdzone"
+
 class Package:
 
     def __init__(self, City, PostalCode, StreetAddress, ClientId, DeliveryType, DeclaredValue=0):
@@ -101,3 +106,34 @@ class Package:
 
     def GetReturn(self):
         return self._Return
+
+    # Keep sorted by DeliveryStep!
+    @staticmethod
+    def FindAllPackageStatuses():
+        statuses = []
+        statuses.append(Status(DeliveryStep=0, Name=DELIVERY_STARTING_STATUS))
+        statuses.append(Status(DeliveryStep=1, Name="Pakowanie"))
+        statuses.append(Status(DeliveryStep=2, Name="Wyslane"))
+        statuses.append(Status(DeliveryStep=3, Name=DELIVERY_SUCCESS_STATUS))
+        statuses.append(Status(DeliveryStep=4, Name=DELIVERY_FAILURE_STATUS))
+        statuses.append(Status(DeliveryStep=5, Name="Anulowane"))
+        return statuses
+
+    # dla transportu, np. transport nie może ustawić statusu paczki na anulowane
+    # Keep sorted!
+    @staticmethod
+    def FindAllLimitedPackageStatuses():
+        statuses = []
+        statuses.append(Status(DeliveryStep=1, Name="Pakowanie"))
+        statuses.append(Status(DeliveryStep=2, Name="Wyslane"))
+        statuses.append(Status(DeliveryStep=3, Name="Dostarczone"))
+        statuses.append(Status(DeliveryStep=4, Name="Problem z Dostawa"))
+        return statuses
+
+    @staticmethod
+    def FindAllReturnStatuses():
+        statuses = []
+        statuses.append(RETURN_STARTING_STATUS)
+        statuses.append("Zwrot pieniedzy")
+        statuses.append("Wyslane ponownie")
+        return statuses

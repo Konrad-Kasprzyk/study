@@ -1,6 +1,7 @@
 from interface import implements
 from . import AdminInterface
 from Dostawa_Infrastructure.Repositories import PackageRepository, DeliveryTypeRepository
+from Dostawa_Domain.Model.Package import Package
 
 
 class AdminService(implements(AdminInterface)):
@@ -22,7 +23,7 @@ class AdminService(implements(AdminInterface)):
         return package.GetPackageProducts()
 
     def GetPackageStatuses(self):
-        return self.packageRepository.FindAllPackageStatuses()
+        return Package.FindAllPackageStatuses()
 
     def ChangePackageStatus(self, package, new_status):
         package_status = package.GetStatus()
@@ -31,7 +32,7 @@ class AdminService(implements(AdminInterface)):
         except ValueError as err:
             print("ChangePackageStatus error:", err)
         else:
-            self.packageRepository.MakePersistent(package)
+            self.packageRepository.Update(package)
 
     def GetDeliveryMethods(self):
         return self.deliveryTypeRepository.FindAll()

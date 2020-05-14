@@ -25,7 +25,7 @@ class DeliveryTypeRepository(implements(IDeliveryTypeRepository)):
     def FindAll(self):
         return self._deliveryTypes
 
-    def MakePersistent(self, delivery_type):
+    def Update(self, delivery_type):
         for i in range(len(self._deliveryTypes)):
             if self._deliveryTypes[i].Name == delivery_type.Name:
                 self._deliveryTypes[i] = delivery_type
