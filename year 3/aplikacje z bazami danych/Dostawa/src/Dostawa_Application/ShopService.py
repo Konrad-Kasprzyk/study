@@ -26,7 +26,7 @@ class ShopInterface(implements(ShopInterface)):
                        "PackedProducts": products}
         return packageInfo
 
-    def NewDelivery(self, city, postalCode, streetAddress, client_id, delivery_method, value, items = None):
+    def NewDelivery(self, city, postalCode, streetAddress, client_id, delivery_method, value, items):
         try:
             package = Package(City=city, PostalCode= postalCode, StreetAddress=streetAddress,
                               ClientId=client_id, DeliveryType=delivery_method, DeclaredValue=value)
