@@ -3,15 +3,15 @@ from datetime import datetime
 
 class Pickup:
 
-    def __init__(self, ProductName, Amount = 1):
+    def __init__(self, Name, Amount = 1):
         self._IsPacked = False
-        self._Productname = ProductName
+        self._name = Name
         self._Amount = Amount
         self._PackingDate = None
 
     @property
-    def Productname(self):
-        return self._Productname
+    def Name(self):
+        return self._name
 
     @property
     def Amount(self):

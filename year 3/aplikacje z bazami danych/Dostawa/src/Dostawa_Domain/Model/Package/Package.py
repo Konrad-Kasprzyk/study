@@ -6,8 +6,8 @@ from Dostawa_Infrastructure.Repositories.DeliveryTypeRepository import DeliveryT
 
 
 DELIVERY_SUCCESS_STATUS = "Dostarczone"
-DELIVERY_FAILURE_STATUS = "Problem z Dostawa"
-DELIVERY_STARTING_STATUS = "Przyjete"
+DELIVERY_FAILURE_STATUS = "Problem z Dostawą"
+DELIVERY_STARTING_STATUS = "Przyjęte"
 RETURN_STARTING_STATUS = "Niepotwierdzone"
 
 class Package:
@@ -81,7 +81,7 @@ class Package:
     # Użyj do tworzenia obiektu przesylki
     def AddDeliveryProduct(self, product_name, quantity):
         if not isinstance(product_name, str) or not isinstance(quantity, int) \
-                or not product_name or product_name < 1:
+                or not product_name or quantity < 1:
             raise ValueError("Bad input while putting products to deliver")
         for pickup in self._Pickups:
             if pickup.Name == product_name:
@@ -94,6 +94,7 @@ class Package:
             if pickup.Name == product_name:
                 pickup.IsPacked = True
                 pickup.PackingDate = datetime.now()
+                return
         raise ValueError("Product name not found while packing product")
 
     # Zwraca zawartość przesyłki

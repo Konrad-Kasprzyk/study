@@ -24,6 +24,15 @@ class Status:
         for status in PackageFile.Package.FindAllPackageStatuses():
             if status.Name == value:
                 self._Name = value
-                self.DeliveryStep = status.DeliveryStep
+                self._DeliveryStep = status.DeliveryStep
                 return
         raise ValueError("Status name not found in available statuses")
+
+    def NextDeliveryStep(self):
+        allStatuses = PackageFile.Package.FindAllPackageStatuses()
+        if allStatuses[-1].DeliveryStep <= self._DeliveryStep:
+            return
+        self._DeliveryStep += 1
+        for status in allStatuses:
+            if status.DeliveryStep == self._DeliveryStep:
+                self._Name = status.Name
