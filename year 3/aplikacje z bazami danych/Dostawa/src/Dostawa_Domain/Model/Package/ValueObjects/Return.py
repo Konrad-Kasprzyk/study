@@ -1,5 +1,5 @@
 from datetime import datetime
-from Dostawa_Domain.Model.Package import Package, RETURN_STARTING_STATUS
+import Dostawa_Domain.Model.Package.Package as PackageFile
 
 
 class Return:
@@ -9,7 +9,7 @@ class Return:
         self._Sum = Sum
         self._ReportDate = datetime.now()
         self._Accepted = False
-        self._Status = RETURN_STARTING_STATUS
+        self._Status = PackageFile.RETURN_STARTING_STATUS
 
     @property
     def Status(self):
@@ -17,7 +17,7 @@ class Return:
 
     @Status.setter
     def Status(self, value):
-        returnStatuses = Package.FindAllReturnStatuses()
+        returnStatuses = PackageFile.Package.FindAllReturnStatuses()
         if value in returnStatuses:
             self._Status = value
 
@@ -44,12 +44,8 @@ class Return:
     def Accepted(self):
         return self._Accepted
 
-    @Accepted.setter
-    def Accepted(self, value):
-        if isinstance(value, bool):
-            self._Accepted = value
-        else:
-            raise ValueError("Accepted must be a bool")
+    def Accept(self):
+        self._Accepted = True
 
     @property
     def Description(self):

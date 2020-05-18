@@ -1,7 +1,7 @@
 from interface import implements
 from . import TransportInterface
-from Dostawa_Infrastructure.Repositories import PackageRepository
-from Dostawa_Domain.Model.Package import Package, DELIVERY_SUCCESS_STATUS, DELIVERY_FAILURE_STATUS
+from Dostawa_Infrastructure.Repositories.PackageRepository import PackageRepository
+from Dostawa_Domain.Model.Package.Package import Package, DELIVERY_SUCCESS_STATUS, DELIVERY_FAILURE_STATUS
 
 
 class TransportService(implements(TransportInterface)):

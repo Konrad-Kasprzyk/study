@@ -1,4 +1,4 @@
-class DeliveryTpe:
+class DeliveryType:
 
     def __init__(self, Name, Price, DeliveryTime):
         self._Name = Name

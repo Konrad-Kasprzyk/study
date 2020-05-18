@@ -1,14 +1,14 @@
 from interface import implements
-from Dostawa_Domain.Model.DeliveryType.Repositories import IDeliveryTypeRepository
-from Dostawa_Domain.Model.DeliveryType import DeliveryType
+from Dostawa_Domain.Model.DeliveryType.Repositories.IDeliveryTypeRepository import IDeliveryTypeRepository
+from Dostawa_Domain.Model.DeliveryType.DeliveryType import DeliveryType
 
 class DeliveryTypeRepository(implements(IDeliveryTypeRepository)):
 
     def __init__(self):
         self._deliveryTypes = []
-        self._deliveryTypes.append(DeliveryType(Name="Ekonomiczny", Price=12, DeliveryType="3-5 dni roboczych"))
-        self._deliveryTypes.append(DeliveryType(Name="Standard", Price=15, DeliveryType="2-3 dni roboczych"))
-        self._deliveryTypes.append(DeliveryType(Name="Ekspres", Price=20, DeliveryType="1-2 dni roboczych"))
+        self._deliveryTypes.append(DeliveryType(Name="Ekonomiczny", Price=12, DeliveryTime="3-5 dni roboczych"))
+        self._deliveryTypes.append(DeliveryType(Name="Standard", Price=15, DeliveryTime="2-3 dni roboczych"))
+        self._deliveryTypes.append(DeliveryType(Name="Ekspres", Price=20, DeliveryTime="1-2 dni roboczych"))
 
     def Insert(self, delivery_type):
         self._deliveryTypes.append(delivery_type)

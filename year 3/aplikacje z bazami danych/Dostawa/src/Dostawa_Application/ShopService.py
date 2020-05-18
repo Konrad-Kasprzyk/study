@@ -1,7 +1,7 @@
 from interface import implements
 from . import ShopInterface
-from Dostawa_Infrastructure.Repositories import PackageRepository
-from Dostawa_Domain.Model.Package import Package
+from Dostawa_Infrastructure.Repositories.PackageRepository import PackageRepository
+from Dostawa_Domain.Model.Package.Package import Package
 
 
 class ShopInterface(implements(ShopInterface)):

@@ -1,10 +1,9 @@
 from interface import implements
-from Dostawa_Domain.Model.Package.Repositories import IPackageRepository
-from Dostawa_Domain.Model.Package import Package
-from Dostawa_Domain.Model.Package.ValueObjects.Status import DELIVERY_SUCCESS_STATUS, DELIVERY_FAILURE_STATUS,\
-    DELIVERY_STARTING_STATUS
-from Dostawa_Domain.Model.Package.ValueObjects.Return import RETURN_STARTING_STATUS
-from Dostawa_Domain.Model.Package.ValueObjects import Status
+from Dostawa_Domain.Model.Package.Repositories.IPackageRepository import IPackageRepository
+from Dostawa_Domain.Model.Package.Package import Package
+from Dostawa_Domain.Model.Package.Package import DELIVERY_SUCCESS_STATUS, DELIVERY_FAILURE_STATUS,\
+    DELIVERY_STARTING_STATUS, RETURN_STARTING_STATUS
+from Dostawa_Domain.Model.Package.ValueObjects.Status import Status
 
 
 class PackageRepository(implements(IPackageRepository)):

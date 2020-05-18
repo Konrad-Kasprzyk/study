@@ -1,4 +1,4 @@
-from Dostawa_Domain.Model.Package import Package, DELIVERY_STARTING_STATUS
+import Dostawa_Domain.Model.Package.Package as PackageFile
 
 
 class Status:
@@ -6,7 +6,7 @@ class Status:
     def __init__(self, DeliveryStep = -1, Name = None):
         if DeliveryStep < 0 or not Name:
             self._DeliveryStep = 0
-            self._Name = DELIVERY_STARTING_STATUS
+            self._Name = PackageFile.DELIVERY_STARTING_STATUS
         else:
             self._DeliveryStep = DeliveryStep
             self._Name = Name
@@ -21,7 +21,7 @@ class Status:
 
     @Name.setter
     def Name(self, value):
-        for status in Package.FindAllPackageStatuses():
+        for status in PackageFile.Package.FindAllPackageStatuses():
             if status.Name == value:
                 self._Name = value
                 self.DeliveryStep = status.DeliveryStep

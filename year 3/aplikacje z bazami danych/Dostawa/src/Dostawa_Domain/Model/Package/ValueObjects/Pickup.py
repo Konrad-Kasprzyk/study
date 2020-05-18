@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-class PickUp:
+class Pickup:
 
     def __init__(self, ProductName, Amount = 1):
         self._IsPacked = False

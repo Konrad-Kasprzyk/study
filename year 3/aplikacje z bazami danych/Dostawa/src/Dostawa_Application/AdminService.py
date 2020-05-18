@@ -1,7 +1,8 @@
 from interface import implements
 from . import AdminInterface
-from Dostawa_Infrastructure.Repositories import PackageRepository, DeliveryTypeRepository
-from Dostawa_Domain.Model.Package import Package
+from Dostawa_Infrastructure.Repositories.PackageRepository import PackageRepository
+from Dostawa_Infrastructure.Repositories.DeliveryTypeRepository import DeliveryTypeRepository
+from Dostawa_Domain.Model.Package.Package import Package
 
 
 class AdminService(implements(AdminInterface)):

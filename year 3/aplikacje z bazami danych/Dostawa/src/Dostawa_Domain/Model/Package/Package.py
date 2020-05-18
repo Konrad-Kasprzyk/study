@@ -1,5 +1,7 @@
 from datetime import datetime
-from .ValueObjects import Status, Pickup, Return
+from .ValueObjects.Status import Status
+from .ValueObjects.Pickup import Pickup
+from .ValueObjects.Return import Return
 from Dostawa_Infrastructure.Repositories.DeliveryTypeRepository import DeliveryTypeRepository
 
 
@@ -113,7 +115,7 @@ class Package:
         statuses = []
         statuses.append(Status(DeliveryStep=0, Name=DELIVERY_STARTING_STATUS))
         statuses.append(Status(DeliveryStep=1, Name="Pakowanie"))
-        statuses.append(Status(DeliveryStep=2, Name="Wyslane"))
+        statuses.append(Status(DeliveryStep=2, Name="Wysłane"))
         statuses.append(Status(DeliveryStep=3, Name=DELIVERY_SUCCESS_STATUS))
         statuses.append(Status(DeliveryStep=4, Name=DELIVERY_FAILURE_STATUS))
         statuses.append(Status(DeliveryStep=5, Name="Anulowane"))
@@ -125,15 +127,15 @@ class Package:
     def FindAllLimitedPackageStatuses():
         statuses = []
         statuses.append(Status(DeliveryStep=1, Name="Pakowanie"))
-        statuses.append(Status(DeliveryStep=2, Name="Wyslane"))
-        statuses.append(Status(DeliveryStep=3, Name="Dostarczone"))
-        statuses.append(Status(DeliveryStep=4, Name="Problem z Dostawa"))
+        statuses.append(Status(DeliveryStep=2, Name="Wysłane"))
+        statuses.append(Status(DeliveryStep=3, Name=DELIVERY_SUCCESS_STATUS))
+        statuses.append(Status(DeliveryStep=4, Name=DELIVERY_FAILURE_STATUS))
         return statuses
 
     @staticmethod
     def FindAllReturnStatuses():
         statuses = []
         statuses.append(RETURN_STARTING_STATUS)
-        statuses.append("Zwrot pieniedzy")
-        statuses.append("Wyslane ponownie")
+        statuses.append("Zwrot pieniędzy")
+        statuses.append("Wysłane ponownie")
         return statuses
