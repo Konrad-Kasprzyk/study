@@ -3,7 +3,7 @@ from interface import Interface
 
 class TransportInterface(Interface):
 
-    def GetlimitedPackage(self, package_code):
+    def GetLimitedPackage(self, package_code):
         pass
 
     def GetLimitedPackagesFilter(self, filter_):
@@ -12,13 +12,13 @@ class TransportInterface(Interface):
     def GetAllLimitedPackages(self):
         pass
 
-    def AccomplishDelivery(self, package_code):
+    def AccomplishDelivery(self, package):
         pass
 
-    def DeliveryFailure(self, package_code, description):
+    def DeliveryFailure(self, package, description):
         pass
 
-    def PackProduct(self, package_code, product_name):
+    def PackProduct(self, package, product_name):
         pass
 
     def GetLimitedPackageSatuses(self):

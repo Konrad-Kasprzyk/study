@@ -11,19 +11,19 @@ class PackageRepository(implements(IPackageRepository)):
     def __init__(self):
         self._packages = []
         self._packages.append(Package(City = "Wrocław", PostalCode = "50-043", StreetAddress = "Ruska 38",
-                                      ClientId = 1, DeliveryMethod = "Ekonomiczny", DeclaredValue=100))
+                                      ClientId = 1, DeliveryType = "Ekonomiczny", DeclaredValue=100))
         self._packages.append(Package(City = "Wrocław", PostalCode = "51-152", StreetAddress = "Piłsudskiego 7",
-                                      ClientId = 2, DeliveryMethod = "Standard"))
+                                      ClientId = 2, DeliveryType = "Standard"))
         self._packages.append(Package(City="Wrocław", PostalCode="53-659", StreetAddress="Sikorskiego 10",
-                                      ClientId = 3, DeliveryMethod= "Standard", DeclaredValue = 50))
+                                      ClientId = 3, DeliveryType= "Standard", DeclaredValue = 50))
         self._packages.append(Package(City="Wrocław", PostalCode="53-609", StreetAddress="Fabryczna 12",
-                                      ClientId=4, DeliveryMethod="Ekonomiczny", DeclaredValue=200))
+                                      ClientId=4, DeliveryType="Ekonomiczny", DeclaredValue=200))
     def Insert(self, package):
         self._packages.append(package)
 
     def Find(self, package_code):
         for package in self._packages:
-            if package.Code == package_code:
+            if package.PackageCode == package_code:
                 return package
         return None
 
@@ -44,5 +44,5 @@ class PackageRepository(implements(IPackageRepository)):
 
     def Update(self, package):
         for i in range(len(self._packages)):
-            if self._packages[i].Code == package.Code:
+            if self._packages[i].PackageCode == package.PackageCode:
                 self._packages[i] = package

@@ -1,5 +1,5 @@
 from interface import implements
-from . import TransportInterface
+from .TransportInterface import TransportInterface
 from Dostawa_Infrastructure.Repositories.PackageRepository import PackageRepository
 from Dostawa_Domain.Model.Package.Package import Package, DELIVERY_SUCCESS_STATUS, DELIVERY_FAILURE_STATUS
 
@@ -9,7 +9,7 @@ class TransportService(implements(TransportInterface)):
     def __init__(self):
         self.packageRepository = PackageRepository()
 
-    def GetlimitedPackage(self, package_code):
+    def GetLimitedPackage(self, package_code):
         package = self.packageRepository.Find(package_code)
         if not package:
             return None
@@ -55,12 +55,16 @@ class TransportService(implements(TransportInterface)):
         self.packageRepository.Update(package)
 
     def PackProduct(self, package, product_name):
-        try:
-            package.MarkPackedProduct(product_name)
-        except ValueError as err:
-            print("PackProduct error:", err)
-        else:
-            self.packageRepository.Update(package)
+        package.MarkPackedProduct(product_name)
+        products = package.GetPackageProducts()
+        allPacked = True
+        for product in products:
+            if product.IsPacked == False:
+                allPacked = False
+                break
+        if allPacked:
+            package.GetStatus().NextDeliveryStep()
+        self.packageRepository.Update(package)
 
     def GetLimitedPackageSatuses(self):
         return Package.FindAllLimitedPackageStatuses()

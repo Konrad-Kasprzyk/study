@@ -1,10 +1,10 @@
 from interface import implements
-from . import ShopInterface
+from .ShopInterface import ShopInterface
 from Dostawa_Infrastructure.Repositories.PackageRepository import PackageRepository
 from Dostawa_Domain.Model.Package.Package import Package
 
 
-class ShopInterface(implements(ShopInterface)):
+class ShopService(implements(ShopInterface)):
 
     def __init__(self):
         self.packageRepository = PackageRepository()
@@ -14,14 +14,15 @@ class ShopInterface(implements(ShopInterface)):
         if not package:
             return None
         products = package.GetPackageProducts()
+        products = [(product.Name, product.Amount) for product in products]
         packageInfo = {"City": package.City,
                        "PostalCode": package.PostalCode,
                        "StreetAddress": package.StreetAddress,
                        "DeclaredValue": package.DeclaredValue,
                        "ClientId": package.ClientId,
-                       "AcceptDate": package.AcceptDate,
-                       "DeliveryDate": package.DeliveryDate,
-                       "DeliveryType": package.DeliveryType,
+                       "AcceptDate": str(package.AcceptDate.date()),
+                       "DeliveryDate": str(package.DeliveryDate.date()) if package.DeliveryDate else None,
+                       "DeliveryType": package.DeliveryType.Name,
                        "Status": package.GetStatus().Name,
                        "PackedProducts": products}
         return packageInfo
