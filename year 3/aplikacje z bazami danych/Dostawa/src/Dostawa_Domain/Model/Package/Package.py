@@ -1,4 +1,5 @@
 from datetime import datetime
+import uuid
 from .ValueObjects.Status import Status
 from .ValueObjects.Pickup import Pickup
 from .ValueObjects.Return import Return
@@ -23,7 +24,7 @@ class Package:
         self._Status = Status()
         self._DeliveryDate = None
         self._Return = None
-        self._PackageCode = 123
+        self._PackageCode = int(uuid.uuid4())
         repo = DeliveryTypeRepository()
         allDeliveryTypes = repo.FindAll()
         for repo_deliveryType in allDeliveryTypes:
@@ -101,7 +102,9 @@ class Package:
     def GetPackageProducts(self):
         return self._Pickups
 
-    def MakeReturn(self, description, sum_=DeclaredValue):
+    def MakeReturn(self, description, sum_=None):
+        if not sum_:
+            sum_=self._DeclaredValue
         if not isinstance(description, str) or not isinstance(sum_, int)\
                 or not description or sum_ < 0:
             raise ValueError("Bad input while making return")

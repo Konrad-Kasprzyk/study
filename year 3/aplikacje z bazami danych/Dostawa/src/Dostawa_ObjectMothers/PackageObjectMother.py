@@ -1,3 +1,4 @@
+from datetime import datetime
 from Dostawa_Domain.Model.Package.Package import Package, DELIVERY_SUCCESS_STATUS, DELIVERY_FAILURE_STATUS
 from Dostawa_Domain.Model.Package.ValueObjects.Pickup import Pickup
 from Dostawa_Domain.Model.Package.ValueObjects.Return import Return
@@ -51,6 +52,7 @@ class PackageObjectMother:
         package.GetStatus().NextDeliveryStep()
         # Status == Dostarczone
         package.GetStatus().NextDeliveryStep()
+        package.DeliveryDate = datetime(2020, 5, 21)
         return package
 
     @staticmethod

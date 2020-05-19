@@ -11,10 +11,10 @@ class DeliveryType:
 
     @Name.setter
     def Name(self, value):
-        if isinstance(value, str):
+        if value and isinstance(value, str):
             self._Name = value
         else:
-            raise ValueError("Name must be a string")
+            raise ValueError("Name must be a non empty string")
 
     @property
     def Price(self):
@@ -22,10 +22,10 @@ class DeliveryType:
 
     @Price.setter
     def Price(self, value):
-        if isinstance(value, int):
+        if isinstance(value, int) and value > 0:
             self._Price = value
         else:
-            raise ValueError("Price must be an integer")
+            raise ValueError("Price must be a postitive integer")
 
     @property
     def DeliveryTime(self):
@@ -33,5 +33,7 @@ class DeliveryType:
 
     @DeliveryTime.setter
     def DeliveryTime(self, value):
-        if isinstance(value, int):
+        if value and isinstance(value, str):
             self._DeliveryTime = value
+        else:
+            raise ValueError("DeliveryTime must be a non empty string")

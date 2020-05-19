@@ -20,6 +20,8 @@ class Return:
         returnStatuses = PackageFile.Package.FindAllReturnStatuses()
         if value in returnStatuses:
             self._Status = value
+        else:
+            raise ValueError("Status not found in avaliable return statuses")
 
     @property
     def Sum(self):
@@ -28,17 +30,6 @@ class Return:
     @property
     def ReportDate(self):
         return self._ReportDate
-
-    @property
-    def ReturnDate(self):
-        return self._ReturnDate
-
-    @ReturnDate.setter
-    def ReturnDate(self, value):
-        if isinstance(value, datetime):
-            self._ReturnDate = value
-        else:
-            raise ValueError("ReturnDate must be a datetime object")
 
     @property
     def Accepted(self):
@@ -53,7 +44,7 @@ class Return:
 
     @Description.setter
     def Description(self, value):
-        if isinstance(value, str):
+        if value and isinstance(value, str):
             self._Description = value
         else:
-            raise ValueError("Description must be a string")
+            raise ValueError("Description must be a non empty string")
