@@ -1,0 +1,10 @@
+C:\Users\299243\Desktop\visual_studio\l7z2\bin\Debug\l7z2.exe.config
+C:\Users\299243\Desktop\visual_studio\l7z2\bin\Debug\l7z2.exe
+C:\Users\299243\Desktop\visual_studio\l7z2\bin\Debug\l7z2.pdb
+C:\Users\299243\Desktop\visual_studio\l7z2\obj\Debug\l7z2.csprojAssemblyReference.cache
+C:\Users\299243\Desktop\visual_studio\l7z2\obj\Debug\l7z2.Form1.resources
+C:\Users\299243\Desktop\visual_studio\l7z2\obj\Debug\l7z2.Properties.Resources.resources
+C:\Users\299243\Desktop\visual_studio\l7z2\obj\Debug\l7z2.csproj.GenerateResource.cache
+C:\Users\299243\Desktop\visual_studio\l7z2\obj\Debug\l7z2.csproj.CoreCompileInputs.cache
+C:\Users\299243\Desktop\visual_studio\l7z2\obj\Debug\l7z2.exe
+C:\Users\299243\Desktop\visual_studio\l7z2\obj\Debug\l7z2.pdb
