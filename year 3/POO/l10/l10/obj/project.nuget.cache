@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "UMp0AzL2D04VwjxUlXshT5BB3YuV4M55V3P+xLroxD6truWE0HYg7CA8tGYHgUo2DMJYdSlkegiIR12FZV/y9w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\299243\\Desktop\\visual_studio\\l10\\l10.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\299243\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\299243\\.nuget\\packages\\unity\\5.11.7\\unity.5.11.7.nupkg.sha512"
+  ],
+  "logs": []
+}

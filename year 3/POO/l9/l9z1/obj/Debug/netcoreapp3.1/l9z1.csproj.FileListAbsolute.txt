@@ -1,0 +1,26 @@
+C:\Users\299243\Desktop\visual_studio\l9z1\bin\Debug\netcoreapp3.1\l9z1.exe
+C:\Users\299243\Desktop\visual_studio\l9z1\bin\Debug\netcoreapp3.1\l9z1.deps.json
+C:\Users\299243\Desktop\visual_studio\l9z1\bin\Debug\netcoreapp3.1\l9z1.runtimeconfig.json
+C:\Users\299243\Desktop\visual_studio\l9z1\bin\Debug\netcoreapp3.1\l9z1.runtimeconfig.dev.json
+C:\Users\299243\Desktop\visual_studio\l9z1\bin\Debug\netcoreapp3.1\l9z1.dll
+C:\Users\299243\Desktop\visual_studio\l9z1\bin\Debug\netcoreapp3.1\l9z1.pdb
+C:\Users\299243\Desktop\visual_studio\l9z1\obj\Debug\netcoreapp3.1\l9z1.csprojAssemblyReference.cache
+C:\Users\299243\Desktop\visual_studio\l9z1\obj\Debug\netcoreapp3.1\l9z1.csproj.CoreCompileInputs.cache
+C:\Users\299243\Desktop\visual_studio\l9z1\obj\Debug\netcoreapp3.1\l9z1.AssemblyInfoInputs.cache
+C:\Users\299243\Desktop\visual_studio\l9z1\obj\Debug\netcoreapp3.1\l9z1.AssemblyInfo.cs
+C:\Users\299243\Desktop\visual_studio\l9z1\obj\Debug\netcoreapp3.1\l9z1.dll
+C:\Users\299243\Desktop\visual_studio\l9z1\obj\Debug\netcoreapp3.1\l9z1.pdb
+C:\Users\299243\Desktop\visual_studio\l9z1\obj\Debug\netcoreapp3.1\l9z1.genruntimeconfig.cache
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\bin\Debug\netcoreapp3.1\l9z1.exe
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\bin\Debug\netcoreapp3.1\l9z1.deps.json
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\bin\Debug\netcoreapp3.1\l9z1.runtimeconfig.json
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\bin\Debug\netcoreapp3.1\l9z1.runtimeconfig.dev.json
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\bin\Debug\netcoreapp3.1\l9z1.dll
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\bin\Debug\netcoreapp3.1\l9z1.pdb
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\obj\Debug\netcoreapp3.1\l9z1.csprojAssemblyReference.cache
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\obj\Debug\netcoreapp3.1\l9z1.csproj.CoreCompileInputs.cache
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\obj\Debug\netcoreapp3.1\l9z1.AssemblyInfoInputs.cache
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\obj\Debug\netcoreapp3.1\l9z1.AssemblyInfo.cs
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\obj\Debug\netcoreapp3.1\l9z1.dll
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\obj\Debug\netcoreapp3.1\l9z1.pdb
+C:\Users\299243\Desktop\study\year 3\POO\l9\l9z1\obj\Debug\netcoreapp3.1\l9z1.genruntimeconfig.cache

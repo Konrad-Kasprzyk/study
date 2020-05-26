@@ -1,0 +1,16 @@
+C:\Users\299243\Desktop\visual_studio\l10\bin\Debug\netcoreapp3.1\l10.exe
+C:\Users\299243\Desktop\visual_studio\l10\bin\Debug\netcoreapp3.1\l10.deps.json
+C:\Users\299243\Desktop\visual_studio\l10\bin\Debug\netcoreapp3.1\l10.runtimeconfig.json
+C:\Users\299243\Desktop\visual_studio\l10\bin\Debug\netcoreapp3.1\l10.runtimeconfig.dev.json
+C:\Users\299243\Desktop\visual_studio\l10\bin\Debug\netcoreapp3.1\l10.dll
+C:\Users\299243\Desktop\visual_studio\l10\bin\Debug\netcoreapp3.1\l10.pdb
+C:\Users\299243\Desktop\visual_studio\l10\obj\Debug\netcoreapp3.1\l10.AssemblyInfoInputs.cache
+C:\Users\299243\Desktop\visual_studio\l10\obj\Debug\netcoreapp3.1\l10.AssemblyInfo.cs
+C:\Users\299243\Desktop\visual_studio\l10\obj\Debug\netcoreapp3.1\l10.dll
+C:\Users\299243\Desktop\visual_studio\l10\obj\Debug\netcoreapp3.1\l10.pdb
+C:\Users\299243\Desktop\visual_studio\l10\obj\Debug\netcoreapp3.1\l10.genruntimeconfig.cache
+C:\Users\299243\Desktop\visual_studio\l10\obj\Debug\netcoreapp3.1\l10.csprojAssemblyReference.cache
+C:\Users\299243\Desktop\visual_studio\l10\bin\Debug\netcoreapp3.1\Unity.Abstractions.dll
+C:\Users\299243\Desktop\visual_studio\l10\bin\Debug\netcoreapp3.1\Unity.Container.dll
+C:\Users\299243\Desktop\visual_studio\l10\obj\Debug\netcoreapp3.1\l10.csproj.CoreCompileInputs.cache
+C:\Users\299243\Desktop\visual_studio\l10\obj\Debug\netcoreapp3.1\l10.csproj.CopyComplete
