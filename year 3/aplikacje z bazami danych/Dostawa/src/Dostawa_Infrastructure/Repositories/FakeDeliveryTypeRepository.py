@@ -2,7 +2,7 @@ from interface import implements
 from Dostawa_Domain.Model.DeliveryType.Repositories.IDeliveryTypeRepository import IDeliveryTypeRepository
 from Dostawa_Domain.Model.DeliveryType.DeliveryType import DeliveryType
 
-class DeliveryTypeRepository(implements(IDeliveryTypeRepository)):
+class FakeDeliveryTypeRepository(implements(IDeliveryTypeRepository)):
 
     def __init__(self):
         self._deliveryTypes = []
@@ -19,13 +19,11 @@ class DeliveryTypeRepository(implements(IDeliveryTypeRepository)):
                 return delivery_type
         return None
 
-    def Delete(self, name):
-        self._deliveryTypes.remove(name)
+    def Delete(self, delivery_type):
+        self._deliveryTypes.remove(delivery_type)
 
     def FindAll(self):
         return self._deliveryTypes
 
     def Update(self, delivery_type):
-        for i in range(len(self._deliveryTypes)):
-            if self._deliveryTypes[i].Name == delivery_type.Name:
-                self._deliveryTypes[i] = delivery_type
+        pass

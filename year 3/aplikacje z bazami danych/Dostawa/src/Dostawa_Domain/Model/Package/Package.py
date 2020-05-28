@@ -3,7 +3,7 @@ import uuid
 from .ValueObjects.Status import Status
 from .ValueObjects.Pickup import Pickup
 from .ValueObjects.Return import Return
-from Dostawa_Infrastructure.Repositories.DeliveryTypeRepository import DeliveryTypeRepository
+from Dostawa_Infrastructure.Repositories.FakeDeliveryTypeRepository import FakeDeliveryTypeRepository
 
 
 DELIVERY_SUCCESS_STATUS = "Dostarczone"
@@ -25,7 +25,7 @@ class Package:
         self._DeliveryDate = None
         self._Return = None
         self._PackageCode = int(uuid.uuid4())
-        repo = DeliveryTypeRepository()
+        repo = FakeDeliveryTypeRepository()
         allDeliveryTypes = repo.FindAll()
         for repo_deliveryType in allDeliveryTypes:
             if repo_deliveryType.Name == DeliveryType:
@@ -95,6 +95,14 @@ class Package:
             if pickup.Name == product_name:
                 pickup.IsPacked = True
                 pickup.PackingDate = datetime.now()
+                return
+        raise ValueError("Product name not found while packing product")
+
+    def UndoMarkPackedProduct(self, product_name):
+        for pickup in self._Pickups:
+            if pickup.Name == product_name:
+                pickup.IsPacked = False
+                pickup.PackingDate = None
                 return
         raise ValueError("Product name not found while packing product")
 

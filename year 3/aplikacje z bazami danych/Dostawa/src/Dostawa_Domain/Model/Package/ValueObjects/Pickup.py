@@ -34,7 +34,7 @@ class Pickup:
 
     @PackingDate.setter
     def PackingDate(self, value):
-        if isinstance(value, datetime):
+        if not value or isinstance(value, datetime):
             self._PackingDate = value
         else:
             raise ValueError("PackingDate must be a datetime object")

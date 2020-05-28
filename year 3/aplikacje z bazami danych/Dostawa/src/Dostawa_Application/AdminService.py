@@ -1,11 +1,11 @@
-from interface import implements
-from . import AdminInterface
-from Dostawa_Infrastructure.Repositories.PackageRepository import PackageRepository
-from Dostawa_Infrastructure.Repositories.DeliveryTypeRepository import DeliveryTypeRepository
+from Dostawa_Infrastructure.Repositories.FakePackageRepository \
+    import FakePackageRepository as PackageRepository
+from Dostawa_Infrastructure.Repositories.FakeDeliveryTypeRepository \
+    import FakeDeliveryTypeRepository as DeliveryTypeRepository
 from Dostawa_Domain.Model.Package.Package import Package
 
 
-class AdminService(implements(AdminInterface)):
+class AdminService():
 
     def __init__(self):
         self.packageRepository = PackageRepository()
@@ -23,19 +23,18 @@ class AdminService(implements(AdminInterface)):
     def GetPackagePickups(self, package):
         return package.GetPackageProducts()
 
-    def GetPackageStatuses(self):
+    def GetAllPackageStatuses(self):
         return Package.FindAllPackageStatuses()
 
-    def ChangePackageStatus(self, package, new_status):
+    """
+        Raises ValueError when valid new_status_name
+    """
+    def ChangePackageStatus(self, package, new_status_name):
         package_status = package.GetStatus()
-        try:
-            package_status.Name = new_status
-        except ValueError as err:
-            print("ChangePackageStatus error:", err)
-        else:
-            self.packageRepository.Update(package)
+        package_status.Name = new_status_name
+        self.packageRepository.Update(package)
 
-    def GetDeliveryMethods(self):
+    def GetAllDeliveryMethods(self):
         return self.deliveryTypeRepository.FindAll()
 
     def GetDeliveryMethod(self, name):
@@ -44,16 +43,11 @@ class AdminService(implements(AdminInterface)):
     def AddDeliveryMethod(self, new_deliveryMethod):
         self.deliveryTypeRepository.Insert(new_deliveryMethod)
 
-    def DeleteDeliveryMethod(self, name):
-        self.deliveryTypeRepository.Delete(name)
+    def DeleteDeliveryMethod(self, delivery_type):
+        self.deliveryTypeRepository.Delete(delivery_type)
 
-    def ChangeDeliveryMethod(self, name, new_deliveryMethod):
-        deliveryMethod = self.deliveryTypeRepository.Find(name)
-        if not deliveryMethod:
-            print("ChangeDeliveryMethod error: name not found")
-            return
-        self.DeleteDeliveryMethod(name)
-        self.AddDeliveryMethod(new_deliveryMethod)
+    def UpdateDeliveryMethod(self, deliveryMethod):
+        self.deliveryTypeRepository.Update(deliveryMethod)
 
     def GetAllReturns(self):
         packages = self.packageRepository.FindAll()
@@ -76,3 +70,19 @@ class AdminService(implements(AdminInterface)):
             if match:
                 matched.append(return_)
         return matched
+
+    def GetReturn(self, package):
+        return package.GetReturn()
+
+    def GetAllReturnStatuses(self):
+        return Package.FindAllReturnStatuses()
+
+    def UpdateReturn(self, package, return_):
+        if not package.GetReturn():
+            raise ValueError("Package doesnt have return. Make return first")
+        currReturn = package.GetReturn()
+        currReturn.Status = return_.Status
+        currReturn.Description = return_.Description
+        if return_.Accepted:
+            currReturn.Accept()
+        self.packageRepository.Update(package)

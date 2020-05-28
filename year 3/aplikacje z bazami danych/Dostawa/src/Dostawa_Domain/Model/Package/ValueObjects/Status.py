@@ -36,3 +36,12 @@ class Status:
         for status in allStatuses:
             if status.DeliveryStep == self._DeliveryStep:
                 self._Name = status.Name
+
+    def PrevDeliveryStep(self):
+        allStatuses = PackageFile.Package.FindAllPackageStatuses()
+        if allStatuses[0].DeliveryStep >= self._DeliveryStep:
+            return
+        self._DeliveryStep -= 1
+        for status in allStatuses:
+            if status.DeliveryStep == self._DeliveryStep:
+                self._Name = status.Name

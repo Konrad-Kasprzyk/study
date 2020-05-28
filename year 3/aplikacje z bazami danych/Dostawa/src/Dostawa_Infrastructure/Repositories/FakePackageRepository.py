@@ -6,7 +6,7 @@ from Dostawa_Domain.Model.Package.Package import DELIVERY_SUCCESS_STATUS, DELIVE
 from Dostawa_Domain.Model.Package.ValueObjects.Status import Status
 
 
-class PackageRepository(implements(IPackageRepository)):
+class FakePackageRepository(implements(IPackageRepository)):
 
     def __init__(self):
         self._packages = []

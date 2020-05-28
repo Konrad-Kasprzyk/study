@@ -9,7 +9,7 @@ class IDeliveryTypeRepository(Interface):
     def Find(self, name):
         pass
 
-    def Delete(self, name):
+    def Delete(self, delivery_type):
         pass
 
     def FindAll(self):

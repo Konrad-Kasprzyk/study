@@ -13,7 +13,7 @@ class PackageTests(TestCase):
 
         self.assertEqual(len(packages), len(set(packages)))
 
-    def test_ChangePickupsState(self):
+    def test_PackPickups(self):
         package = PackageObjectMother.CreatePackageManyPickupNoReturn()
 
         pickups = package.GetPackageProducts()
@@ -23,6 +23,17 @@ class PackageTests(TestCase):
         pickups = package.GetPackageProducts()
         for pickup in pickups:
             self.assertEqual(pickup.IsPacked, True)
+
+    def test_UnpackingPickups(self):
+        package = PackageObjectMother.CreatePackageManyPickupPackedNoReturn()
+
+        pickups = package.GetPackageProducts()
+        for pickup in pickups:
+            package.UndoMarkPackedProduct(pickup.Name)
+
+        pickups = package.GetPackageProducts()
+        for pickup in pickups:
+            self.assertEqual(pickup.IsPacked, False)
 
     def test_ChangingPackageStatuses(self):
         # DeliveryStep = 0, first status
@@ -35,6 +46,20 @@ class PackageTests(TestCase):
             self.assertEqual(package.GetStatus().Name, package2.GetStatus().Name)
             self.assertEqual(package.GetStatus().DeliveryStep, package2.GetStatus().DeliveryStep)
             package2.GetStatus().NextDeliveryStep()
+
+    def test_ChangePackageStatusForwardAndBackward(self):
+        package = PackageObjectMother.CreatePackageNoPickupsNoReturn()
+        package2 = PackageObjectMother.CreatePackageNoPickupsNoReturn()
+        statuses = Package.FindAllPackageStatuses()
+        statusNames = [status.Name for status in statuses]
+
+        for i in range(10):
+            for j in range(i):
+                package.GetStatus().NextDeliveryStep()
+            assert package.GetStatus().Name in statusNames
+            for j in range(i):
+                package.GetStatus().PrevDeliveryStep()
+            assert package.GetStatus().Name == package2.GetStatus().Name
 
     def test_DeliveryFailureMakeReturn(self):
         package = PackageObjectMother.CreatePackageManyPickupPackedNoReturn()

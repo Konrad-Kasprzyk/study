@@ -1,10 +1,8 @@
-from interface import implements
-from .TransportInterface import TransportInterface
-from Dostawa_Infrastructure.Repositories.PackageRepository import PackageRepository
+from Dostawa_Infrastructure.Repositories.FakePackageRepository import FakePackageRepository as PackageRepository
 from Dostawa_Domain.Model.Package.Package import Package, DELIVERY_SUCCESS_STATUS, DELIVERY_FAILURE_STATUS
 
 
-class TransportService(implements(TransportInterface)):
+class TransportService:
 
     def __init__(self):
         self.packageRepository = PackageRepository()
@@ -46,6 +44,11 @@ class TransportService(implements(TransportInterface)):
         return matched
 
     def AccomplishDelivery(self, package):
+        products = package.GetPackageProducts()
+        for product in products:
+            if product.IsPacked == False:
+                raise ValueError("Cannot accomplish delivery of this package,"
+                                 " because not all products are packed")
         package.GetStatus().Name = DELIVERY_SUCCESS_STATUS
         self.packageRepository.Update(package)
 
@@ -64,6 +67,18 @@ class TransportService(implements(TransportInterface)):
                 break
         if allPacked:
             package.GetStatus().NextDeliveryStep()
+        self.packageRepository.Update(package)
+
+    def UndoPackingProduct(self, package, product_name):
+        products = package.GetPackageProducts()
+        allPacked = True
+        for product in products:
+            if product.IsPacked == False:
+                allPacked = False
+                break
+        if allPacked:
+            package.GetStatus().PrevDeliveryStep()
+        package.UndoMarkPackedProduct(product_name)
         self.packageRepository.Update(package)
 
     def GetLimitedPackageSatuses(self):
