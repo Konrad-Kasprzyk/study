@@ -1,7 +1,8 @@
-from unittest import TestCase
+#from unittest import TestCase
+from django.test import TestCase
 from Dostawa_ObjectMothers.DeliveryTypeObjectMother import DeliveryTypeObjectMother
-from Dostawa_Infrastructure.Repositories.FakeDeliveryTypeRepository import \
-    FakeDeliveryTypeRepository as DeliveryTypeRepository
+from Dostawa_Infrastructure.Repositories.DeliveryTypeRepository import \
+    DeliveryTypeRepository as DeliveryTypeRepository
 
 
 class DeliveryTypeRepositoryTests(TestCase):
@@ -31,9 +32,9 @@ class DeliveryTypeRepositoryTests(TestCase):
         insertedDeliveryType = DeliveryTypeObjectMother.CreateDeliveryType()
         insertedDeliveryType.Name = "Sample name"
         insertedDeliveryType.DeliveryTime = "Sample delivery time"
-        deliveryTypes = deliveryTypeRepository.FindAll()
 
         deliveryTypeRepository.Insert(insertedDeliveryType)
+        deliveryTypes = deliveryTypeRepository.FindAll()
         foundInsertedDeliveryType = False
         for deliveryType in deliveryTypes:
             if deliveryType.Name == insertedDeliveryType.Name and \
@@ -46,6 +47,9 @@ class DeliveryTypeRepositoryTests(TestCase):
 
     def test_FindUpdatedDeliveryTypeReturnsSamePackage(self):
         deliveryTypeRepository = DeliveryTypeRepository()
+        deliveryTypeRepository.Insert(DeliveryTypeObjectMother.CreateDeliveryType())
+        deliveryTypeRepository.Insert(DeliveryTypeObjectMother.CreateDeliveryType())
+        deliveryTypeRepository.Insert(DeliveryTypeObjectMother.CreateDeliveryType())
         deliveryTypes = deliveryTypeRepository.FindAll()
         deliveryType = deliveryTypes[0]
 
@@ -62,6 +66,13 @@ class DeliveryTypeRepositoryTests(TestCase):
 
     def test_Deleting(self):
         deliveryTypeRepository = DeliveryTypeRepository()
+        deliveryTypeRepository.Insert(DeliveryTypeObjectMother.CreateDeliveryType())
+        deliveryType = DeliveryTypeObjectMother.CreateDeliveryType()
+        deliveryType.Name = "Sample Name 1"
+        deliveryTypeRepository.Insert(deliveryType)
+        deliveryType = DeliveryTypeObjectMother.CreateDeliveryType()
+        deliveryType.Name = "Sample Name 2"
+        deliveryTypeRepository.Insert(deliveryType)
         deliveryTypes = deliveryTypeRepository.FindAll()
         deletedDeliveryType = deliveryTypes[0]
 

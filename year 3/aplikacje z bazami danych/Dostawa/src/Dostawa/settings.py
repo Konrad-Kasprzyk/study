@@ -40,8 +40,11 @@ INSTALLED_APPS = [
 
     # own
     'Dostawa_Application',
+    'Dostawa_Application_UnitTests',
     'Dostawa_Domain',
+    'Dostawa_Domain_UnitTests',
     'Dostawa_Infrastructure',
+    'Dostawa_Infrastructure_UnitTests',
 ]
 
 MIDDLEWARE = [
@@ -80,8 +83,12 @@ WSGI_APPLICATION = 'Dostawa.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dostawadb',
+        'USER': 'konrad',
+        'PASSWORD': 'pass',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
 
