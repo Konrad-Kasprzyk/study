@@ -1,6 +1,7 @@
-from interface import implements
 from Dostawa_Infrastructure.Repositories.FakePackageRepository \
     import FakePackageRepository as PackageRepository
+from Dostawa_Infrastructure.Repositories.FakeDeliveryTypeRepository \
+    import FakeDeliveryTypeRepository as DeliveryTypeRepository
 from Dostawa_Domain.Model.Package.Package import Package
 
 
@@ -8,6 +9,7 @@ class ShopService():
 
     def __init__(self):
         self.packageRepository = PackageRepository()
+        self.deliveryTypeRepository = DeliveryTypeRepository()
 
     """
         Raises ValueError When: argument is missing,
@@ -36,3 +38,6 @@ class ShopService():
         if not package:
             return None
         return package.GetStatus().Name
+
+    def GetAllDeliveryMethods(self):
+        return self.deliveryTypeRepository.FindAll()
