@@ -84,14 +84,14 @@ class Package:
         if not isinstance(product_name, str) or not isinstance(quantity, int) \
                 or not product_name or quantity < 1:
             raise ValueError("Bad input while putting products to deliver")
-        for pickup in self._Pickups:
+        for pickup in self.GetPackageProducts():
             if pickup.Name == product_name:
                 raise ValueError("while putting products to deliver product duplication occurred")
         self._Pickups.append(Pickup(Name=product_name, Amount=quantity))
 
     # Użyj przy wkładaniu pobranych produktów z magazynu do przesyłki
     def MarkPackedProduct(self, product_name):
-        for pickup in self._Pickups:
+        for pickup in self.GetPackageProducts():
             if pickup.Name == product_name:
                 pickup.IsPacked = True
                 pickup.PackingDate = datetime.now()
@@ -99,12 +99,12 @@ class Package:
         raise ValueError("Product name not found while packing product")
 
     def UndoMarkPackedProduct(self, product_name):
-        for pickup in self._Pickups:
+        for pickup in self.GetPackageProducts():
             if pickup.Name == product_name:
                 pickup.IsPacked = False
                 pickup.PackingDate = None
                 return
-        raise ValueError("Product name not found while packing product")
+        raise ValueError("Product name not found while unpacking product")
 
     # Zwraca zawartość przesyłki
     def GetPackageProducts(self):

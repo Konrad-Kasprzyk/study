@@ -1,6 +1,7 @@
 from unittest import TestCase
+from django.test import TestCase
 from Dostawa_ObjectMothers.PackageObjectMother import PackageObjectMother
-from Dostawa_Infrastructure.Repositories.FakePackageRepository import FakePackageRepository as PackageRepository
+from Dostawa_Infrastructure.Repositories.PackageRepository import PackageRepository as PackageRepository
 from datetime import datetime
 
 
@@ -23,9 +24,9 @@ class PackageRepositoryTests(TestCase):
     def test_FindInsertedPackageInFindAll(self):
         packageRepository = PackageRepository()
         insertedPackage = PackageObjectMother.CreatePackageManyPickupNoReturn()
-        packages = packageRepository.FindAll()
 
         packageRepository.Insert(insertedPackage)
+        packages = packageRepository.FindAll()
         foundInsertedPackage = False
         for package in packages:
             if insertedPackage.PackageCode == package.PackageCode:
@@ -36,6 +37,12 @@ class PackageRepositoryTests(TestCase):
 
     def test_FindUpdatedPackageReturnsSamePackage(self):
         packageRepository = PackageRepository()
+        packageRepository.Insert(PackageObjectMother.CreatePackageNoPickupsNoReturn())
+        packageRepository.Insert(PackageObjectMother.CreatePackageManyPickupNoReturn())
+        packageRepository.Insert(PackageObjectMother.CreatePackageManyPickupPackedNoReturn())
+        packageRepository.Insert(PackageObjectMother.CreateDeliveredPackageManyPickupPackedNoReturn())
+        packageRepository.Insert(PackageObjectMother.CreatePackageManyPickupPackedUnconfirmedReturn())
+        packageRepository.Insert(PackageObjectMother.CreatePackageManyPickupPackedConfirmedReturn())
         packages = packageRepository.FindAll()
         package = packages[0]
 
@@ -50,6 +57,6 @@ class PackageRepositoryTests(TestCase):
         packageAfterInsert = packageRepository.Find(package.PackageCode)
 
         assert packageAfterInsert.PackageCode == package.PackageCode
-        assert packageAfterInsert.DeliveryDate == datetime(2018, 12, 30)
+        assert packageAfterInsert.DeliveryDate == datetime(2018, 12, 30).date()
         assert packageAfterInsert.GetReturn().Description == "Sample text"
 

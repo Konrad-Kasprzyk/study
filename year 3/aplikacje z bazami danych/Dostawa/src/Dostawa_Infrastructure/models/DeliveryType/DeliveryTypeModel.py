@@ -2,7 +2,7 @@ from Dostawa_Domain.Model.DeliveryType.DeliveryType import DeliveryType
 from django.db import models
 
 
-class DeliveryType(DeliveryType, models.Model):
+class DeliveryTypeModel(DeliveryType, models.Model):
     _NameField = models.CharField(max_length=200)
     _PriceField = models.PositiveIntegerField()
     _DeliveryTimeField = models.CharField(max_length=200)
@@ -11,9 +11,9 @@ class DeliveryType(DeliveryType, models.Model):
         models.Model.__init__(self, *args, **kwargs)
 
     def _restore(self):
-        self.Name = self._NameField
-        self.Price = self._PriceField
-        self.DeliveryTime = self._DeliveryTimeField
+        super(DeliveryTypeModel, type(self)).Name.fset(self, self._NameField)
+        super(DeliveryTypeModel, type(self)).Price.fset(self, self._PriceField)
+        super(DeliveryTypeModel, type(self)).DeliveryTime.fset(self, self._DeliveryTimeField)
 
     @property
     def Name(self):
@@ -21,7 +21,7 @@ class DeliveryType(DeliveryType, models.Model):
 
     @Name.setter
     def Name(self, value):
-        super(DeliveryType, type(self)).Name.fset(self, value)
+        super(DeliveryTypeModel, type(self)).Name.fset(self, value)
         self._NameField = value
 
     @property
@@ -30,7 +30,7 @@ class DeliveryType(DeliveryType, models.Model):
 
     @Price.setter
     def Price(self, value):
-        super(DeliveryType, type(self)).Price.fset(self, value)
+        super(DeliveryTypeModel, type(self)).Price.fset(self, value)
         self._PriceField = value
 
     @property
@@ -39,5 +39,5 @@ class DeliveryType(DeliveryType, models.Model):
 
     @DeliveryTime.setter
     def DeliveryTime(self, value):
-        super(DeliveryType, type(self)).DeliveryTime.fset(self, value)
+        super(DeliveryTypeModel, type(self)).DeliveryTime.fset(self, value)
         self._DeliveryTimeField = value

@@ -27,14 +27,6 @@ class AdminServiceTests(TestCase):
 
             PackageRepository.Find.assert_called_once()
 
-    def test_GetPackagePickupsUseProperRepositoryMethod(self):
-        with patch.object(Package, 'GetPackageProducts'):
-            adminService = AdminService()
-
-            adminService.GetPackagePickups(PackageObjectMother.CreatePackageManyPickupPackedNoReturn())
-
-            Package.GetPackageProducts.assert_called_once()
-
     def test_GetAllPackageStatusesUseProperRepositoryMethod(self):
         with patch.object(Package, 'FindAllPackageStatuses'):
             adminService = AdminService()
