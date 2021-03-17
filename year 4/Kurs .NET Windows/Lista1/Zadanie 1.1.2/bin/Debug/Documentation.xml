@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Zadanie_1._1._2</name>
+    </assembly>
+    <members>
+        <member name="T:Zadanie_1._1._2.Grid">
+            <summary>
+                Holds two dimensional int array. Elements are indexed from 1.
+            </summary>
+        </member>
+        <member name="M:Zadanie_1._1._2.Grid.#ctor(System.Int32,System.Int32)">
+            <summary>
+                Creates two dimensional int array.
+            </summary>
+            <param name="n">Number of rows.</param>
+            <param name="m">Number of columns.</param>
+        </member>
+        <member name="P:Zadanie_1._1._2.Grid.Item(System.Int32)">
+            <summary>
+                Get row of elements.
+            </summary>
+            <param name="i">Row number, indexed from 1.</param>
+        </member>
+        <member name="P:Zadanie_1._1._2.Grid.Item(System.Int32,System.Int32)">
+            <summary>
+                Get or set single element.
+            </summary>
+            <param name="i">Row number, indexed from 1.</param>
+            <param name="j">Column number, indexed from 1.</param>
+        </member>
+    </members>
+</doc>
