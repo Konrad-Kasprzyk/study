@@ -1,0 +1,6 @@
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista2\Zadanie 1.1.4\bin\Debug\Zadanie_1._1._4.exe
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista2\Zadanie 1.1.4\bin\Debug\Zadanie_1._1._4.pdb
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista2\Zadanie 1.1.4\obj\Debug\Zadanie 1.1.4.csprojAssemblyReference.cache
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista2\Zadanie 1.1.4\obj\Debug\Zadanie 1.1.4.csproj.CoreCompileInputs.cache
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista2\Zadanie 1.1.4\obj\Debug\Zadanie_1._1._4.exe
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista2\Zadanie 1.1.4\obj\Debug\Zadanie_1._1._4.pdb
