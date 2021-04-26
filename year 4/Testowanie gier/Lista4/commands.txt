@@ -1,0 +1,13 @@
+.\venv\Scripts\activate
+
+pytest zadanie1.py
+
+---------Zadanie3---------
+
+pytest zadanie3.py -m sampleMark
+
+pytest file_name -m "not sampleMark"
+
+---------Zadanie4---------
+
+pytest --cov-report term-missing --cov=store zadanie2.py
