@@ -1,0 +1,47 @@
+﻿<Window x:Class="Zadanie_2_2_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zadanie_2_2_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="2*" />
+        </Grid.RowDefinitions>
+        <ListView ItemsSource="{Binding Employees}" HorizontalAlignment="Left" Height="148" Margin="10,10,0,0" VerticalAlignment="Top" Width="753">
+            <ListView.View>
+
+                <GridView AllowsColumnReorder="true"
+                          ColumnHeaderToolTip="Employee Information">
+                    <GridViewColumn DisplayMemberBinding=
+                            "{Binding Name}" 
+                            Header="First Name" Width="200"/>
+                    <GridViewColumn DisplayMemberBinding=
+                            "{Binding Surname}" 
+                            Header="Last Name" Width="200"/>
+                </GridView>
+
+            </ListView.View>
+        </ListView>
+        <TreeView Grid.Row="1" Name="myTreeViewEvent">
+            <TreeViewItem Header="Root" IsSelected="True">
+                <TreeViewItem Header="Child"/>
+                <TreeViewItem Header="ChildRoot">
+                    <TreeViewItem Header="NestedChild"/>
+                </TreeViewItem>
+            </TreeViewItem>
+            <TreeViewItem Header="Numbers">
+                <TreeViewItem Header="7"/>
+                <TreeViewItem Header="13"/>
+                <TreeViewItem Header="41"/>
+                <TreeViewItem Header="49"/>
+            </TreeViewItem>
+        </TreeView>
+        <ProgressBar HorizontalAlignment="Left" Height="32" Margin="18,55,0,0" Grid.Row="2" VerticalAlignment="Top" Width="745" IsIndeterminate="True" Background="#FFCF1D1D" Foreground="#FFD19820"/>
+
+    </Grid>
+</Window>

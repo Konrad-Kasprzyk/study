@@ -1,0 +1,55 @@
+﻿<Window x:Class="Zadanie_2_2_1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Zadanie_2_2_1"
+        mc:Ignorable="d"
+        Title="Wybór uczelni" Height="450" Width="810.291" ResizeMode="NoResize">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="3*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <GroupBox Header="Uczelnia" HorizontalAlignment="Left" Height="159" Margin="10,10,0,0" VerticalAlignment="Top" Width="772">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Label Content="Nazwa:" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.642,1.029" Height="24" Grid.ColumnSpan="2"/>
+                <TextBox Name="Name" Grid.Column="1" Height="23" TextWrapping="Wrap" Margin="0,26,10,19"/>
+                <Label Grid.Row="1"  Content="Adres:" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.717,1.256" Height="24" Grid.ColumnSpan="2" Width="48"/>
+                <TextBox Name="Address" Grid.Row="1" Grid.Column="1" Height="23" TextWrapping="Wrap" Margin="0,26,10,19"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Rodzaj studiów" HorizontalAlignment="Left" Height="160" Margin="10,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="772">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="8*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+                <Label Content="Cykl nauki" HorizontalAlignment="Left" Margin="10,22,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.717,1.256" Height="32" Grid.ColumnSpan="2"/>
+                <ComboBox Name="TypeComboBox" HorizontalAlignment="Left" Margin="26,22,0,0" VerticalAlignment="Top" Width="640" Grid.Column="1">
+                    <Label Content="3-letnie"/>
+                    <Label Content="3.5-letnie"/>
+                    <Label Content="5-letnie"/>
+                </ComboBox>
+                <CheckBox Name="CheckBox1" Content="dzienne" Grid.Column="1" HorizontalAlignment="Left" Margin="26,19,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+                <CheckBox Name="CheckBox2" Content="uzupełniające" Grid.Column="1" HorizontalAlignment="Left" Margin="125,22,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        <Button Content="Akceptuj" Click="AcceptButtonClick" HorizontalAlignment="Left" Margin="10,24,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75"/>
+        <Button Content="Anuluj" Click="CancelButtonClick" HorizontalAlignment="Left" Margin="707,24,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.107,0.503"/>
+    </Grid>
+</Window>
