@@ -1,0 +1,6 @@
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista7\Zadanie_2_3_10\Zadanie_2_3_10\bin\Debug\Zadanie_2_3_10.exe
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista7\Zadanie_2_3_10\Zadanie_2_3_10\bin\Debug\Zadanie_2_3_10.pdb
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista7\Zadanie_2_3_10\Zadanie_2_3_10\obj\Debug\Zadanie_2_3_10.csprojAssemblyReference.cache
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista7\Zadanie_2_3_10\Zadanie_2_3_10\obj\Debug\Zadanie_2_3_10.csproj.CoreCompileInputs.cache
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista7\Zadanie_2_3_10\Zadanie_2_3_10\obj\Debug\Zadanie_2_3_10.exe
+C:\Users\299243\Desktop\study\year 4\Kurs .NET Windows\Lista7\Zadanie_2_3_10\Zadanie_2_3_10\obj\Debug\Zadanie_2_3_10.pdb
