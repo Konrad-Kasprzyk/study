@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Zadanie2" Class="Zadanie2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.\sqlexpress;Initial Catalog=Zadanie2;Integrated Security=True" SettingsObjectName="Zadanie_2_5_3.Properties.Settings" SettingsPropertyName="Zadanie2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Miejscowosc" Member="Miejscowoscs">
+    <Type Name="Miejscowosc">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nazwa" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Miejscowosc_Student" Member="Students" ThisKey="ID" OtherKey="MiejscowoscID" Type="Student" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Imie" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Nazwisko" Type="System.String" DbType="NChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="DataUrodzenia" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="MiejscowoscID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="Miejscowosc_Student" Member="Miejscowosc" ThisKey="MiejscowoscID" OtherKey="ID" Type="Miejscowosc" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

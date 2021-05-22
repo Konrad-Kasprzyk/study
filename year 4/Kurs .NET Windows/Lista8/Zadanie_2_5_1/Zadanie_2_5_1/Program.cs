@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Data;
 using System.Data.OleDb;
 
 namespace Zadanie_2_5_1
@@ -8,26 +7,22 @@ namespace Zadanie_2_5_1
     {
         public static void Main(string[] args)
         {
-            // w connString mamy parametry laczenia z baza danych
-            string connString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=dane.xlsx; Extended Properties='Excel 8.0;HDR=Yes'";
-            using (OleDbConnection connection = new OleDbConnection(connString))
+            string connString = "Provider=Microsoft.ACE.OLEDB.12.0; Data Source=Studenci.xlsx; Extended Properties='Excel 8.0; HDR=Yes'";
+            string queryString = "SELECT * FROM [Arkusz1$]";
+            using (var connection = new OleDbConnection(connString))
             {
-                // laczymy sie i wchodzimy do bazy z pliku dane.xlsx
+                OleDbCommand command = new OleDbCommand(queryString, connection);
                 connection.Open(); 
-
-                // tworzymy adapter, a nastepnie tworzymy zapytanie
-                OleDbDataAdapter adapter = new OleDbDataAdapter();
-                adapter.SelectCommand = new OleDbCommand("SELECT * FROM [Arkusz1$]", connection);
-
-                // na koncu wypelniamy zbior danych
-                DataSet data = new DataSet();
-                adapter.Fill(data, "Studenci");
-
-                // i wypisujemy imie, nazwisko, pesel i indeks kazdego studenta
-                foreach (var m in data.Tables[0].DefaultView)
-                    Console.WriteLine(((DataRowView)m).Row.ItemArray[0] + "\t" + ((DataRowView)m).Row.ItemArray[1] + "\t" + ((DataRowView)m).Row.ItemArray[2] + "\t" + ((DataRowView)m).Row.ItemArray[3]);
+                OleDbDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    string row = "";
+                    for (int i = 0; i < reader.FieldCount; i++)
+                        row += reader[i] + " ";
+                    Console.WriteLine(row);
+                }
+                reader.Close();
             }
-
             Console.ReadKey();
         }
     }
